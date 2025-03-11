@@ -1,0 +1,36 @@
+fileFormatVersion: 2
+guid: 1a30ab28d1b63444db83fc3b5554aad3
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 22604dd76f55453daccee3ed9e7b94b5, type: 3}
+  SerializedAsset: "{\"IsCompiled\":true,\"CompilerVersion\":\"2.0.9\",\"ReferencedSpecifiers\":[\"@assets/Experience/IdleTOT/Scripts/GameManager\"],\"Source\":\"\\\"use
+    strict\\\";\\nObject.defineProperty(exports, \\\"__esModule\\\", { value: true
+    });\\nconst UnityEngine_1 = require(\\\"UnityEngine\\\");\\nconst GameManager_1
+    = require(\\\"@assets/Experience/IdleTOT/Scripts/GameManager\\\");\\nclass CanvasManager
+    extends UnityEngine_1.MonoBehaviour {\\n    constructor() {\\n        super(...arguments);\\n       
+    this.score = 0;\\n        this.personalStorageKey = \\\"PersonalStorageKey\\\";\\n       
+    this.globalStorageKey = \\\"GlobalStorageKey\\\";\\n        this.floatHighScoreKey
+    = \\\"FloatHighScoreKey\\\";\\n    }\\n    Start() {\\n        //Get GameManager
+    singleton and add a listener to OnGameStateChange event\\n        this.gameManager
+    = GameManager_1.default.Instance;\\n        this.gameManager.OnGameStateChange.addListener(this.CheckGameState,
+    //@ts-ignore\\n        this);\\n        this.gameManager.ChangeGameState(GameManager_1.GameState.GAME_PLAY);\\n   
+    }\\n    /** Manages the enemy logic when the game state changes. @param newState
+    */\\n    CheckGameState(newState) {\\n        switch (newState) {\\n           
+    case GameManager_1.GameState.LOADING:\\n                this.OnLoading();\\n               
+    break;\\n            case GameManager_1.GameState.GAME_PLAY:\\n               
+    this.OnGamePlay();\\n                break;\\n        }\\n    }\\n    /** This
+    will manage the canvas once the Avatar is loading. */\\n    OnLoading() {\\n       
+    this.scorePanel.SetActive(false);\\n    }\\n    OnGamePlay() {\\n        this.scorePanel.SetActive(true);\\n       
+    this.score = 0;\\n        this.UpdateScore();\\n    }\\n    UpdateScore() {\\n       
+    this.score += 1;\\n        this.scoreText.text = \\\"Score: \\\" + this.score;\\n       
+    //TODO supprimer cette m\xE9thode et la remplacer par onTriggerEnter\\n       
+    // ou la transformer en setter\\n    }\\n}\\nexports.default = CanvasManager;\\n//#
+    sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQ2FudmFzTWFuYWdlci5qcyIsIm1hcHBpbmdzIjoiOztBQUNBLDZDQUFnRjtBQUloRixnRkFBcUY7QUFDckYsTUFBcUIsYUFBYyxTQUFRLDJCQUFhO0lBQXhEOztRQU9ZLFVBQUssR0FBVSxDQUFDO1FBRWhCLHVCQUFrQixHQUFXLG9CQUFvQjtRQUNqRCxxQkFBZ0IsR0FBVyxrQkFBa0I7UUFDN0Msc0JBQWlCLEdBQVcsbUJBQW1CO0lBc0QzRDtJQTNDSSxLQUFLO1FBQ0QseUVBQXdFO1FBQ3hFLElBQUksQ0FBQyxXQUFXLEdBQUcscUJBQVcsQ0FBQyxRQUFRO1FBQ3ZDLElBQUksQ0FBQyxXQUFXLENBQUMsaUJBQWlCLENBQUMsV0FBVyxDQUFDLElBQUksQ0FBQyxjQUFhO1lBQUMsQ0FBQztRQUVuRSxJQUFJLENBQUMsV0FBVyxDQUFDLGVBQWUsQ0FBQyx1QkFBUyxDQUFDLFNBQVMsQ0FBQztJQUd6RDtJQUVBLDJFQUEwRTtJQUNsRSxjQUFjLENBQUMsUUFBbUI7UUFDdEMsUUFBTyxRQUFRLEVBQUU7WUFDYixLQUFLLHVCQUFTLENBQUMsT0FBTztnQkFDbEIsSUFBSSxDQUFDLFNBQVMsRUFBRTtnQkFDaEIsTUFBSztZQUNULEtBQUssdUJBQVMsQ0FBQyxTQUFTO2dCQUNwQixJQUFJLENBQUMsVUFBVSxFQUFFO2dCQUNqQixNQUFLO1FBQ2I7SUFDSjtJQUVBLDhEQUE2RDtJQUNyRCxTQUFTO1FBQ2IsSUFBSSxDQUFDLFVBQVUsQ0FBQyxTQUFTLENBQUMsS0FBSyxDQUFDO0lBQ3BDO0lBRVEsVUFBVTtRQUNkLElBQUksQ0FBQyxVQUFVLENBQUMsU0FBUyxDQUFDLElBQUksQ0FBQztRQUMvQixJQUFJLENBQUMsS0FBSyxHQUFHLENBQUM7UUFDZCxJQUFJLENBQUMsV0FBVyxFQUFDO0lBQ3JCO0lBR08sV0FBVztRQUNkLElBQUksQ0FBQyxLQUFLLElBQUksQ0FBQztRQUNmLElBQUksQ0FBQyxTQUFTLENBQUMsSUFBSSxHQUFHLFNBQVMsR0FBRyxJQUFJLENBQUMsS0FBSztRQUU1QyxpRUFBZ0U7UUFDaEUsOEJBQTZCO0lBQ2pDO0NBR0o7QUFqRUEsZ0NBaUVBIiwibmFtZXMiOltdLCJpZ25vcmVMaXN0IjpbXSwic291cmNlcyI6WyJDYW52YXNNYW5hZ2VyLnRzIl0sInNvdXJjZXNDb250ZW50IjpbbnVsbF19\",\"ScriptHash\":\"9a3025efa3f3e0223610c151e876fcee\",\"Specifier\":\"@assets/Experience/IdleTOT/Scripts/CanvasManager\",\"DefaultTypeName\":\"@assets/Experience/IdleTOT/Scripts/CanvasManager.CanvasManager\",\"IsMonobehaviour\":true,\"IsScriptableObj\":false,\"InheritanceChain\":[\"@assets/Experience/IdleTOT/Scripts/CanvasManager.CanvasManager\",\"UnityEngine.MonoBehaviour\",\"UnityEngine.Behaviour\",\"UnityEngine.Component\",\"UnityEngine.Object\",\"@com.genies.scripting@1.6.0\\\\Runtime\\\\Typing\\\\index.d.System.Object\"],\"Properties\":[{\"Path\":\"scorePanel\",\"Name\":\"scorePanel\",\"TypeName\":\"UnityEngine.GameObject\",\"AssemblyName\":null,\"EnumKeys\":[],\"EnumValues\":[],\"IsGeniesBehaviourRef\":false,\"IsGeniesScriptableObjectRef\":false,\"Decorators\":[{\"Type\":\"Header\",\"Args\":[\"\\\"Game
+    Scene UI References\\\"\"]},{\"Type\":\"SerializeField\",\"Args\":[]}],\"Initializers\":[],\"ArrayDimension\":-1,\"IsArray\":false,\"IsEnum\":false,\"ArrayElementInitializer\":null,\"ChildProperties\":[],\"PrettyName\":\"Score
+    Panel\"},{\"Path\":\"scoreText\",\"Name\":\"scoreText\",\"TypeName\":\"TMPro.TMP_Text\",\"AssemblyName\":null,\"EnumKeys\":[],\"EnumValues\":[],\"IsGeniesBehaviourRef\":false,\"IsGeniesScriptableObjectRef\":false,\"Decorators\":[{\"Type\":\"SerializeField\",\"Args\":[]}],\"Initializers\":[],\"ArrayDimension\":-1,\"IsArray\":false,\"IsEnum\":false,\"ArrayElementInitializer\":null,\"ChildProperties\":[],\"PrettyName\":\"Score
+    Text\"}],\"SupportedUiEvents\":0,\"DisplayName\":\"CanvasManager\",\"name\":\"CanvasManager\",\"hideFlags\":8}"
