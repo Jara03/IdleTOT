@@ -8,11 +8,25 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 22604dd76f55453daccee3ed9e7b94b5, type: 3}
-  SerializedAsset: '{"IsCompiled":true,"CompilerVersion":"2.0.9","ReferencedSpecifiers":[],"Source":"\"use
+  SerializedAsset: '{"IsCompiled":true,"CompilerVersion":"2.0.9","ReferencedSpecifiers":["@assets/Experience/IdleTOT/Scripts/GameManager","@assets/Experience/IdleTOT/Scripts/CanvasManager"],"Source":"\"use
     strict\";\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst
-    UnityEngine_1 = require(\"UnityEngine\");\nclass PlayerController extends UnityEngine_1.MonoBehaviour
-    {\n    //Called when script instance is loaded\n    Awake() { }\n    //Start
-    is called on the frame when a script is enabled just \n    //before any of the
-    Update methods are called the first time.\n    Start() { }\n    //Update is called
-    every frame, if the MonoBehaviour is enabled.\n    Update() { }\n}\nexports.default
-    = PlayerController;\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiUGxheWVyQ29udHJvbGxlci5qcyIsIm1hcHBpbmdzIjoiOztBQUNBLDZDQUEyQztBQUMzQyxNQUFxQixnQkFBaUIsU0FBUSwyQkFBYTtJQUV2RCx1Q0FBc0M7SUFDOUIsS0FBSyxLQUFXO0lBRXhCLDZEQUE0RDtJQUM1RCw2REFBNEQ7SUFDcEQsS0FBSyxLQUFXO0lBRXhCLGdFQUErRDtJQUN2RCxNQUFNLEtBQVc7Q0FDN0I7QUFYQSxtQ0FXQSIsIm5hbWVzIjpbXSwiaWdub3JlTGlzdCI6W10sInNvdXJjZXMiOlsiUGxheWVyQ29udHJvbGxlci50cyJdLCJzb3VyY2VzQ29udGVudCI6W251bGxdfQ==","ScriptHash":"a9a848aac0d773d8d218f493a4bd1847","Specifier":"@assets/Experience/IdleTOT/Scripts/PlayerController","DefaultTypeName":"@assets/Experience/IdleTOT/Scripts/PlayerController.PlayerController","IsMonobehaviour":true,"IsScriptableObj":false,"InheritanceChain":["@assets/Experience/IdleTOT/Scripts/PlayerController.PlayerController","UnityEngine.MonoBehaviour","UnityEngine.Behaviour","UnityEngine.Component","UnityEngine.Object","@com.genies.scripting@1.6.0\\Runtime\\Typing\\index.d.System.Object"],"Properties":[],"SupportedUiEvents":0,"DisplayName":"PlayerController","name":"PlayerController","hideFlags":8}'
+    UnityEngine_1 = require(\"UnityEngine\");\nconst GameManager_1 = require(\"@assets/Experience/IdleTOT/Scripts/GameManager\");\nclass
+    PlayerController extends UnityEngine_1.MonoBehaviour {\n    async Start() {\n       
+    //Get GameManager singleton and add a listener to OnGameStateChange event\n       
+    this.gameManager = GameManager_1.default.Instance;\n        this.gameManager.OnGameStateChange.addListener(this.CheckGameState,
+    //@ts-ignore\n        this);\n    }\n    Update() {\n        //If game is playing,
+    check for touch swipe and move player accordingly\n    }\n    /** Manages the
+    player logic when the game state changes. @param newState */\n    CheckGameState(newState)
+    {\n        switch (newState) {\n            case GameManager_1.GameState.GAME_PLAY:\n               
+    this.OnGamePlay();\n                break;\n        }\n    }\n    /** This will
+    manage the player once the game starts. */\n    OnGamePlay() {\n    }\n    OnTriggerEnter(coll)
+    {\n        //End game if colliding with enemy\n        if (coll.gameObject.tag
+    == \"Enemy\") {\n            UnityEngine_1.GameObject.Destroy(coll.gameObject);\n           
+    this.canvasManager.UpdateScore();\n        }\n    }\n    OnCollisionEnter(coll)
+    {\n        //End game if colliding with enemy\n        if (coll.gameObject.tag
+    == \"Enemy\") {\n            UnityEngine_1.GameObject.Destroy(coll.gameObject);\n           
+    this.canvasManager.UpdateScore();\n        }\n    }\n}\nexports.default = PlayerController;\n//#
+    sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiUGxheWVyQ29udHJvbGxlci5qcyIsIm1hcHBpbmdzIjoiOztBQUFBLDZDQWtCb0I7QUFFcEIsZ0ZBQXNEO0FBR3RELE1BQXFCLGdCQUFpQixTQUFRLDJCQUFhO0lBU3ZELEtBQUssQ0FBQyxLQUFLO1FBQ1AseUVBQXdFO1FBQ3hFLElBQUksQ0FBQyxXQUFXLEdBQUcscUJBQVcsQ0FBQyxRQUFRO1FBRXZDLElBQUksQ0FBQyxXQUFXLENBQUMsaUJBQWlCLENBQUMsV0FBVyxDQUFDLElBQUksQ0FBQyxjQUFhO1lBQUMsQ0FBQztJQUN2RTtJQUVBLE1BQU07UUFDRix1RUFBc0U7SUFFMUU7SUFFQSw0RUFBMkU7SUFDbkUsY0FBYyxDQUFDLFFBQW1CO1FBQ3RDLFFBQU8sUUFBUSxFQUFFO1lBQ2IsS0FBSyx1QkFBUyxDQUFDLFNBQVM7Z0JBQ3BCLElBQUksQ0FBQyxVQUFVLEVBQUU7Z0JBQ2pCLE1BQUs7UUFDYjtJQUNKO0lBRUEsd0RBQXVEO0lBQy9DLFVBQVU7SUFFbEI7SUFHQSxjQUFjLENBQUMsSUFBYztRQUN6QixrQ0FBaUM7UUFDakMsSUFBSSxJQUFJLENBQUMsVUFBVSxDQUFDLEdBQUcsSUFBSSxPQUFPLEVBQUU7WUFFaEMsd0JBQVUsQ0FBQyxPQUFPLENBQUMsSUFBSSxDQUFDLFVBQVUsQ0FBQztZQUNuQyxJQUFJLENBQUMsYUFBYSxDQUFDLFdBQVcsRUFBRTtRQUNwQztJQUNKO0lBR0EsZ0JBQWdCLENBQUMsSUFBZTtRQUM1QixrQ0FBaUM7UUFDakMsSUFBSSxJQUFJLENBQUMsVUFBVSxDQUFDLEdBQUcsSUFBSSxPQUFPLEVBQUU7WUFFcEMsd0JBQVUsQ0FBQyxPQUFPLENBQUMsSUFBSSxDQUFDLFVBQVUsQ0FBQztZQUMvQixJQUFJLENBQUMsYUFBYSxDQUFDLFdBQVcsRUFBRTtRQUNwQztJQUNKO0NBR0o7QUF4REEsbUNBd0RBIiwibmFtZXMiOltdLCJpZ25vcmVMaXN0IjpbXSwic291cmNlcyI6WyJQbGF5ZXJDb250cm9sbGVyLnRzIl0sInNvdXJjZXNDb250ZW50IjpbbnVsbF19","ScriptHash":"5638241ce4adb771134891ded9ab0285","Specifier":"@assets/Experience/IdleTOT/Scripts/PlayerController","DefaultTypeName":"@assets/Experience/IdleTOT/Scripts/PlayerController.PlayerController","IsMonobehaviour":true,"IsScriptableObj":false,"InheritanceChain":["@assets/Experience/IdleTOT/Scripts/PlayerController.PlayerController","UnityEngine.MonoBehaviour","UnityEngine.Behaviour","UnityEngine.Component","UnityEngine.Object","@com.genies.scripting@1.6.0\\Runtime\\Typing\\index.d.System.Object"],"Properties":[{"Path":"playerAnimator","Name":"playerAnimator","TypeName":"UnityEngine.RuntimeAnimatorController","AssemblyName":null,"EnumKeys":[],"EnumValues":[],"IsGeniesBehaviourRef":false,"IsGeniesScriptableObjectRef":false,"Decorators":[{"Type":"Header","Args":["\"Player
+    Settings\""]},{"Type":"SerializeField","Args":[]}],"Initializers":[],"ArrayDimension":-1,"IsArray":false,"IsEnum":false,"ArrayElementInitializer":null,"ChildProperties":[],"PrettyName":"Player
+    Animator"},{"Path":"canvasManager","Name":"canvasManager","TypeName":"@assets/Experience/IdleTOT/Scripts/CanvasManager.CanvasManager","AssemblyName":null,"EnumKeys":[],"EnumValues":[],"IsGeniesBehaviourRef":true,"IsGeniesScriptableObjectRef":false,"Decorators":[],"Initializers":[],"ArrayDimension":-1,"IsArray":false,"IsEnum":false,"ArrayElementInitializer":null,"ChildProperties":[],"PrettyName":"Canvas
+    Manager"}],"SupportedUiEvents":0,"DisplayName":"PlayerController","name":"PlayerController","hideFlags":8}'
