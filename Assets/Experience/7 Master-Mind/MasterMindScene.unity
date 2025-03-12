@@ -2222,7 +2222,7 @@ MonoBehaviour:
     PropKey: playerAnimator
     BasePath: playerAnimator
   _script: {fileID: 4458252877524076426, guid: 99fc684ce04ac8940812d2f01f30a3ce, type: 3}
-  _scriptAssetHash: 6eeeda7d2d7ef97ba900038b75f88de6
+  _scriptAssetHash: a3e7840dc7decf2fe0dbd369ba9c07da
   UiEventForwarders: []
 --- !u!1 &266410855
 GameObject:

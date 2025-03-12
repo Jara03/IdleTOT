@@ -968,7 +968,7 @@ MonoBehaviour:
     PropKey: enemySpawnDelay
     BasePath: enemySpawnDelay
   _script: {fileID: 4458252877524076426, guid: 8b321e2ce4f55416d947f127292c6066, type: 3}
-  _scriptAssetHash: f1bf196a6ed756965e2df843400bf41f
+  _scriptAssetHash: 53b10140c99b7cd4aed5db61b84d9ba2
   UiEventForwarders: []
 --- !u!4 &491376202
 Transform:
@@ -1645,7 +1645,7 @@ MonoBehaviour:
     PropKey: jumpForce
     BasePath: jumpForce
   _script: {fileID: 4458252877524076426, guid: a8ecc0ff452304eee9647478df7ede7c, type: 3}
-  _scriptAssetHash: 16cea76702b180b45e16d3ece1650eb9
+  _scriptAssetHash: 04a3c0d073453d1bb3eddacc10ea09af
   UiEventForwarders: []
 --- !u!54 &947288428
 Rigidbody:
@@ -2696,7 +2696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _serializedProperties: []
   _script: {fileID: 4458252877524076426, guid: 31eee6a77bb0b4baeae5908d4798e6d7, type: 3}
-  _scriptAssetHash: 464803d82a56bf7dcb0f43cea37beb1a
+  _scriptAssetHash: 068676df1c0de9193294b2ce11c74748
   UiEventForwarders: []
 --- !u!4 &1477992085
 Transform:
@@ -3919,7 +3919,7 @@ MonoBehaviour:
     PropKey: gameOverGlobalHighScoreText
     BasePath: gameOverGlobalHighScoreText
   _script: {fileID: 4458252877524076426, guid: bbc21ac8a14184930bb70801cf8c7ddb, type: 3}
-  _scriptAssetHash: c7a67115e770958e70859ad1c95aeadf
+  _scriptAssetHash: 03caf2a8d8971298c2d665178612fc60
   UiEventForwarders: []
 --- !u!1 &2139798080
 GameObject:

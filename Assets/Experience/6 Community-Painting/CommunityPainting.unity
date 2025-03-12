@@ -1943,7 +1943,7 @@ MonoBehaviour:
     PropKey: selectColorButtons.[7]
     BasePath: selectColorButtons_D1
   _script: {fileID: 4458252877524076426, guid: d9b271c1b6a141f4eacaaf58758f9e19, type: 3}
-  _scriptAssetHash: e47f98449df6a0783c3156e4f546de91
+  _scriptAssetHash: a71b0e8f89932cab1357c60ffce05d32
   UiEventForwarders: []
 --- !u!1 &944559193
 GameObject:

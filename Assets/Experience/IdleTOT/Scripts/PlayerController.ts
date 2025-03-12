@@ -15,7 +15,7 @@ import {
     Rigidbody,
     ForceMode,
     Collision,
-    GameObject
+    GameObject, ControllerColliderHit
 } from 'UnityEngine';
 
 import GameManager, { GameState } from './GameManager';
@@ -30,11 +30,13 @@ export default class PlayerController extends MonoBehaviour {
     public canvasManager : CanvasManager;
 
 
+
     async Start() {
         //Get GameManager singleton and add a listener to OnGameStateChange event
         this.gameManager = GameManager.Instance;
 
         this.gameManager.OnGameStateChange.addListener(this.CheckGameState);
+
     }
 
     Update() {
@@ -71,7 +73,16 @@ export default class PlayerController extends MonoBehaviour {
         //End game if colliding with enemy
         if (coll.gameObject.tag == "Enemy") {
 
-        GameObject.Destroy(coll.gameObject);
+            GameObject.Destroy(coll.gameObject);
+            this.canvasManager.UpdateScore();
+        }
+    }
+
+    OnControllerColliderHit(coll: ControllerColliderHit) {
+        //End game if colliding with enemy
+        if (coll.gameObject.tag == "Enemy") {
+
+            GameObject.Destroy(coll.gameObject);
             this.canvasManager.UpdateScore();
         }
     }
