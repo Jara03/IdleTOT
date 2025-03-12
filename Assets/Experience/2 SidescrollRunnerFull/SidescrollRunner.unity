@@ -968,7 +968,7 @@ MonoBehaviour:
     PropKey: enemySpawnDelay
     BasePath: enemySpawnDelay
   _script: {fileID: 4458252877524076426, guid: e59da77745cad483bbb632885dd1bf73, type: 3}
-  _scriptAssetHash: fbf5be1c83c218ff78b625e478cabf76
+  _scriptAssetHash: 92ceb1a81ca8cdce92f327850786276d
   UiEventForwarders: []
 --- !u!4 &491376202
 Transform:
@@ -1674,7 +1674,7 @@ MonoBehaviour:
     PropKey: swipeThreshold
     BasePath: swipeThreshold
   _script: {fileID: 4458252877524076426, guid: bf35fc2c3078f4ab6955ba0ee0514bb9, type: 3}
-  _scriptAssetHash: 28f68007ad7e6e1209c87e3b365580de
+  _scriptAssetHash: 1b1d19d801b20e73ca68a605fd0a6b57
   UiEventForwarders: []
 --- !u!1 &1025341370
 GameObject:
@@ -2889,7 +2889,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _serializedProperties: []
   _script: {fileID: 4458252877524076426, guid: a11360a575fc346648875d676579b674, type: 3}
-  _scriptAssetHash: 36c25d38643c843b68782440725c6de7
+  _scriptAssetHash: f8b2ae338a97a72532b4ac72a5766401
   UiEventForwarders: []
 --- !u!4 &1477992085
 Transform:
@@ -4243,7 +4243,7 @@ MonoBehaviour:
     PropKey: personalBestScoreText
     BasePath: personalBestScoreText
   _script: {fileID: 4458252877524076426, guid: 0c3d21e2a7c15434d884ace063a4f6f2, type: 3}
-  _scriptAssetHash: 1581d2d53797248d222226c099012f61
+  _scriptAssetHash: 231e4116e76039547f1b629e135ad360
   UiEventForwarders: []
 --- !u!1 &2139798080
 GameObject:
