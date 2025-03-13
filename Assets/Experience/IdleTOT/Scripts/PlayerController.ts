@@ -15,11 +15,12 @@ import {
     Rigidbody,
     ForceMode,
     Collision,
-    GameObject, ControllerColliderHit
+    GameObject, ControllerColliderHit, AudioSource, AudioClip
 } from 'UnityEngine';
 
 import GameManager, { GameState } from './GameManager';
 import CanvasManager from "@assets/Experience/IdleTOT/Scripts/CanvasManager";
+import {AudioPlayableAsset} from "UnityEngine.Timeline";
 
 export default class PlayerController extends MonoBehaviour {
 
@@ -28,8 +29,8 @@ export default class PlayerController extends MonoBehaviour {
 
     private gameManager : GameManager;
     public canvasManager : CanvasManager;
-
-
+    public Yeah : AudioSource;
+    public Yclip : AudioClip ;
 
     async Start() {
         //Get GameManager singleton and add a listener to OnGameStateChange event
@@ -59,31 +60,13 @@ export default class PlayerController extends MonoBehaviour {
     }
 
 
-    OnTriggerEnter(coll: Collider) {
-        //End game if colliding with enemy
-        if (coll.gameObject.tag == "Enemy") {
-
-            GameObject.Destroy(coll.gameObject);
-            this.canvasManager.UpdateScore();
-        }
-    }
-
-
-    OnCollisionEnter(coll: Collision) {
-        //End game if colliding with enemy
-        if (coll.gameObject.tag == "Enemy") {
-
-            GameObject.Destroy(coll.gameObject);
-            this.canvasManager.UpdateScore();
-        }
-    }
-
     OnControllerColliderHit(coll: ControllerColliderHit) {
         //End game if colliding with enemy
         if (coll.gameObject.tag == "Enemy") {
 
             GameObject.Destroy(coll.gameObject);
             this.canvasManager.UpdateScore();
+            this.Yeah.PlayOneShot(this.Yclip)
         }
     }
 
