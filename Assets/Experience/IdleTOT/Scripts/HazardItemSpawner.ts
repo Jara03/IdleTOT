@@ -19,7 +19,6 @@ export default class HazardItemSpawner extends MonoBehaviour {
     @SerializeField private ItemSpawnDelay: float = 3;
 
     private spawnPosition: Vector3 = new Vector3(0, -3, 0);
-    //TODO faire des spawn entre 30 et -30
 
     private gameManager: GameManager;
 
