@@ -1,7 +1,18 @@
-import {Coroutine, GameObject, Mathf, MonoBehaviour, Object, Random, Time, Vector3, WaitForSeconds} from "UnityEngine";
+import {
+    Coroutine,
+    GameObject,
+    Mathf,
+    MonoBehaviour,
+    Object,
+    Random,
+    Time,
+    Transform,
+    Vector3,
+    WaitForSeconds
+} from "UnityEngine";
 import GameManager, {GameState} from "./GameManager";
 
-export default class HazardPoolController extends MonoBehaviour {
+export default class HazardItemSpawner extends MonoBehaviour {
 
     @Header("Enemy Settings")
     @SerializeField private prefab: GameObject;
@@ -55,7 +66,6 @@ export default class HazardPoolController extends MonoBehaviour {
     /** Coroutine that spawns a new enemy from the pool. */
     private *SpawnItems() {
         while(true) {
-            console.log("test pour spawn");
             yield null;
             //Get a deactivated enemy from the pool
             let item = this.CreateItem();
@@ -66,6 +76,23 @@ export default class HazardPoolController extends MonoBehaviour {
             }
             yield new WaitForSeconds(this.ItemSpawnDelay);
         }
+    }
+
+    public getNearestItemPosition(playerPosition: Vector3): Transform {
+        let nearestItem: GameObject = null;
+        let nearestDistance: number = 1000;
+
+        for (let i = 0; i < this.transform.childCount; i++) {
+            let item = this.transform.GetChild(i).gameObject;
+            if (item.activeSelf) {
+                let distance = Vector3.Distance(playerPosition, item.transform.position);
+                if (distance < nearestDistance) {
+                    nearestItem = item;
+                    nearestDistance = distance;
+                }
+            }
+        }
+        return nearestItem.transform;
     }
 
 
