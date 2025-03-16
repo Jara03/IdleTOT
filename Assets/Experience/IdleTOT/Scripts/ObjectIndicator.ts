@@ -24,6 +24,7 @@ export default class Objectindicator extends MonoBehaviour {
     public offset: int;
     public correctionAngle: int;
 
+
      Start()
     {
 

@@ -8,6 +8,13 @@ export enum GameState {
     GAME_OVER
 }
 
+export enum GameValue {
+    SCORE,
+    HIGH_SCORE,
+    SPAWN_RATE,
+    SECONDS_PER_WIN,
+}
+
 export default class GameManager extends MonoBehaviour {
 
     /** This is an event that is triggered when the current GameState changes. */
@@ -17,6 +24,8 @@ export default class GameManager extends MonoBehaviour {
     /** The game's current GameState value. */
     private gameState: GameState;
 
+    public GameValues: Map<GameValue, number> = new Map<GameValue, number>();
+
     Awake() {
         //Establishes the GameManager singleton instance
         if(GameManager.Instance == null) {
@@ -24,11 +33,18 @@ export default class GameManager extends MonoBehaviour {
         }else{
             GameObject.Destroy(this.gameObject);
         }
+
+
+        this.GameValues.set(GameValue.SCORE, 10);
+        this.GameValues.set(GameValue.HIGH_SCORE, 0);
+        this.GameValues.set(GameValue.SPAWN_RATE, 5);
+        this.GameValues.set(GameValue.SECONDS_PER_WIN, 1);
     }
 
     Start() {
         //Set the game state to LOADING at the Start
         //this.ChangeGameState(GameState.LOADING);
+
     }
 
     /** @returns the game's current GameState value */
@@ -48,5 +64,9 @@ export default class GameManager extends MonoBehaviour {
         console.log("New Game State Change: ", newState)
         this.OnGameStateChange.trigger(newState);
         this.gameState = newState;
+    }
+
+    public UpdateGameValue(value: GameValue, amount: number) {
+        this.GameValues.set(value, this.GameValues.get(value) + amount);
     }
 }

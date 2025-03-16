@@ -1,0 +1,37 @@
+fileFormatVersion: 2
+guid: 9e7168f607981de4bb525b9c96ca3376
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 22604dd76f55453daccee3ed9e7b94b5, type: 3}
+  SerializedAsset: '{"IsCompiled":true,"CompilerVersion":"2.0.9","ReferencedSpecifiers":["@assets/Experience/IdleTOT/Scripts/MenuManager","@assets/Experience/IdleTOT/Scripts/GameManager"],"Source":"\"use
+    strict\";\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst
+    UnityEngine_1 = require(\"UnityEngine\");\nconst GameManager_1 = require(\"@assets/Experience/IdleTOT/Scripts/GameManager\");\nclass
+    ImprovementManager extends UnityEngine_1.MonoBehaviour {\n    constructor() {\n       
+    super(...arguments);\n        this.cost = [10, 20, 30];\n    }\n    //Start is
+    called on the frame when a script is enabled just\n    //before any of the Update
+    methods are called the first time.\n    Start() {\n        this.gameManager =
+    GameManager_1.default.Instance;\n        // Add a listener to the button to toggle
+    the menu section\n        for (let i = 0; i < this.BuyButtons.length; i++) {\n           
+    this.BuyButtons[i].onClick.AddListener(() => {\n                this.BuyItem(this.cost[i]);\n               
+    this.ApplyImprovement(i);\n            });\n        }\n    }\n    Awake() {\n   
+    }\n    onEnable() {\n    }\n    BuyItem(cost) {\n        //deduct cost from total
+    score\n        //update total score text\n        //\n        this.MenuManager.BuyItem(cost);\n   
+    }\n    ApplyImprovement(index) {\n        //apply improvement\n        switch
+    (index) {\n            case 0:\n                //Increase Spawn Rate\n               
+    this.gameManager.UpdateGameValue(GameManager_1.GameValue.SPAWN_RATE, -0.5);\n               
+    break;\n            case 1:\n                //Increase Seconds won\n               
+    this.gameManager.UpdateGameValue(GameManager_1.GameValue.SECONDS_PER_WIN, 1);\n               
+    break;\n            case 2:\n                //apply improvement 3\n               
+    break;\n            default:\n                break;\n        }\n    }\n}\nexports.default
+    = ImprovementManager;\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiSW1wcm92ZW1lbnRNYW5hZ2VyLmpzIiwibWFwcGluZ3MiOiI7O0FBQ0EsNkNBQXFEO0FBR3JELGdGQUFxRjtBQUlyRixNQUFxQixrQkFBbUIsU0FBUSwyQkFBYTtJQUE3RDs7UUFVVyxTQUFJLEdBQVUsQ0FBQyxFQUFFLEVBQUUsRUFBRSxFQUFFLEVBQUUsQ0FBQyxDQUFDO0lBMkR0QztJQXJESSw0REFBMkQ7SUFDM0QsNkRBQTREO0lBQ3BELEtBQUs7UUFHVCxJQUFJLENBQUMsV0FBVyxHQUFHLHFCQUFXLENBQUMsUUFBUTtRQUV2QywwREFBeUQ7UUFDekQsS0FBSyxJQUFJLENBQUMsR0FBRyxDQUFDLEVBQUUsQ0FBQyxHQUFHLElBQUksQ0FBQyxVQUFVLENBQUMsTUFBTSxFQUFFLENBQUMsRUFBRSxFQUFFO1lBRTdDLElBQUksQ0FBQyxVQUFVLENBQUMsQ0FBQyxDQUFDLENBQUMsT0FBTyxDQUFDLFdBQVcsQ0FBQyxHQUFHLEVBQUU7Z0JBQ3hDLElBQUksQ0FBQyxPQUFPLENBQUMsSUFBSSxDQUFDLElBQUksQ0FBQyxDQUFDLENBQUMsQ0FBQztnQkFDMUIsSUFBSSxDQUFDLGdCQUFnQixDQUFDLENBQUMsQ0FBQztZQUM1QixDQUFDLENBQUM7UUFDTjtJQUNKO0lBQ1EsS0FBSztJQUdiO0lBRVEsUUFBUTtJQUVoQjtJQUVRLE9BQU8sQ0FBQyxJQUFTO1FBQ3JCLDhCQUE2QjtRQUM3Qix5QkFBd0I7UUFDeEIsRUFBQztRQUVELElBQUksQ0FBQyxXQUFXLENBQUMsT0FBTyxDQUFDLElBQUksQ0FBQztJQUNsQztJQUVRLGdCQUFnQixDQUFDLEtBQVU7UUFDL0IsbUJBQWtCO1FBRWxCLFFBQVEsS0FBSyxFQUFFO1lBQ1gsS0FBSyxDQUFDO2dCQUNGLHFCQUFvQjtnQkFDcEIsSUFBSSxDQUFDLFdBQVcsQ0FBQyxlQUFlLENBQUMsdUJBQVMsQ0FBQyxVQUFVLEVBQUUsQ0FBQyxHQUFHLENBQUM7Z0JBQzVELE1BQUs7WUFDVCxLQUFLLENBQUM7Z0JBQ0Ysc0JBQXFCO2dCQUNyQixJQUFJLENBQUMsV0FBVyxDQUFDLGVBQWUsQ0FBQyx1QkFBUyxDQUFDLGVBQWUsRUFBRSxDQUFDLENBQUM7Z0JBQzlELE1BQUs7WUFDVCxLQUFLLENBQUM7Z0JBQ0YscUJBQW9CO2dCQUNwQixNQUFLO1lBQ1Q7Z0JBQ0ksTUFBSztRQUNiO0lBQ0o7Q0FFSjtBQXJFQSxxQ0FxRUEiLCJuYW1lcyI6W10sImlnbm9yZUxpc3QiOltdLCJzb3VyY2VzIjpbIkltcHJvdmVtZW50TWFuYWdlci50cyJdLCJzb3VyY2VzQ29udGVudCI6W251bGxdfQ==","ScriptHash":"59ab08ec7114ded8fda0502ee3e19e94","Specifier":"@assets/Experience/IdleTOT/Scripts/ImprovementManager","DefaultTypeName":"@assets/Experience/IdleTOT/Scripts/ImprovementManager.ImprovementManager","IsMonobehaviour":true,"IsScriptableObj":false,"InheritanceChain":["@assets/Experience/IdleTOT/Scripts/ImprovementManager.ImprovementManager","UnityEngine.MonoBehaviour","UnityEngine.Behaviour","UnityEngine.Component","UnityEngine.Object","@com.genies.scripting@1.6.0\\Runtime\\Typing\\index.d.System.Object"],"Properties":[{"Path":"BuyButtons","Name":"BuyButtons","TypeName":"UnityEngine.UI.Button","AssemblyName":null,"EnumKeys":[],"EnumValues":[],"IsGeniesBehaviourRef":false,"IsGeniesScriptableObjectRef":false,"Decorators":[{"Type":"Header","Args":["\"Button
+    Settings\""]},{"Type":"SerializeField","Args":[]}],"Initializers":[],"ArrayDimension":1,"IsArray":true,"IsEnum":false,"ArrayElementInitializer":{"Path":"BuyButtons_D1","Name":"BuyButtons","TypeName":"UnityEngine.UI.Button","AssemblyName":null,"EnumKeys":[],"EnumValues":[],"IsGeniesBehaviourRef":false,"IsGeniesScriptableObjectRef":false,"Decorators":[],"Initializers":[],"ArrayDimension":1,"IsArray":false,"IsEnum":false,"ArrayElementInitializer":null,"ChildProperties":[],"PrettyName":"Buy
+    Buttons"},"ChildProperties":[],"PrettyName":"Buy Buttons"},{"Path":"BuyMaxButtons","Name":"BuyMaxButtons","TypeName":"UnityEngine.UI.Button","AssemblyName":null,"EnumKeys":[],"EnumValues":[],"IsGeniesBehaviourRef":false,"IsGeniesScriptableObjectRef":false,"Decorators":[{"Type":"SerializeField","Args":[]}],"Initializers":[],"ArrayDimension":1,"IsArray":true,"IsEnum":false,"ArrayElementInitializer":{"Path":"BuyMaxButtons_D1","Name":"BuyMaxButtons","TypeName":"UnityEngine.UI.Button","AssemblyName":null,"EnumKeys":[],"EnumValues":[],"IsGeniesBehaviourRef":false,"IsGeniesScriptableObjectRef":false,"Decorators":[],"Initializers":[],"ArrayDimension":1,"IsArray":false,"IsEnum":false,"ArrayElementInitializer":null,"ChildProperties":[],"PrettyName":"Buy
+    Max Buttons"},"ChildProperties":[],"PrettyName":"Buy Max Buttons"},{"Path":"MenuManager","Name":"MenuManager","TypeName":"@assets/Experience/IdleTOT/Scripts/MenuManager.MenuManager","AssemblyName":null,"EnumKeys":[],"EnumValues":[],"IsGeniesBehaviourRef":true,"IsGeniesScriptableObjectRef":false,"Decorators":[{"Type":"Header","Args":["\"Canvas
+    Settings\""]}],"Initializers":[],"ArrayDimension":-1,"IsArray":false,"IsEnum":false,"ArrayElementInitializer":null,"ChildProperties":[],"PrettyName":"Menu
+    Manager"},{"Path":"cost","Name":"cost","TypeName":"System.Int32","AssemblyName":null,"EnumKeys":[],"EnumValues":[],"IsGeniesBehaviourRef":false,"IsGeniesScriptableObjectRef":false,"Decorators":[{"Type":"Header","Args":["\"Cost
+    Values\""]},{"Type":"SerializeField","Args":[]}],"Initializers":["10","20","30"],"ArrayDimension":1,"IsArray":true,"IsEnum":false,"ArrayElementInitializer":{"Path":"cost_D1","Name":"cost","TypeName":"System.Int32","AssemblyName":null,"EnumKeys":[],"EnumValues":[],"IsGeniesBehaviourRef":false,"IsGeniesScriptableObjectRef":false,"Decorators":[],"Initializers":[],"ArrayDimension":1,"IsArray":false,"IsEnum":false,"ArrayElementInitializer":null,"ChildProperties":[],"PrettyName":"Cost"},"ChildProperties":[],"PrettyName":"Cost"}],"SupportedUiEvents":0,"DisplayName":"ImprovementManager","name":"ImprovementManager","hideFlags":8}'

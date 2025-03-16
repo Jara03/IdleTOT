@@ -5,18 +5,16 @@ import {
     MonoBehaviour,
     Object,
     Random,
-    Time,
     Transform,
     Vector3,
     WaitForSeconds
 } from "UnityEngine";
-import GameManager, {GameState} from "./GameManager";
+import GameManager, {GameState, GameValue} from "./GameManager";
 
 export default class HazardItemSpawner extends MonoBehaviour {
 
     @Header("Enemy Settings")
     @SerializeField private prefab: GameObject;
-    @SerializeField private ItemSpawnDelay: float = 3;
 
     private spawnPosition: Vector3 = new Vector3(0, -3, 0);
 
@@ -73,7 +71,7 @@ export default class HazardItemSpawner extends MonoBehaviour {
                 item.transform.position = new Vector3(Mathf.Floor(Random.Range(-30, 30)), -3, Mathf.Floor(Random.Range(-30, 30)));
                 item.SetActive(true);
             }
-            yield new WaitForSeconds(this.ItemSpawnDelay);
+            yield new WaitForSeconds(this.gameManager.GameValues.get(GameValue.SPAWN_RATE));
         }
     }
 

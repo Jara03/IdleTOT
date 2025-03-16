@@ -1,0 +1,39 @@
+fileFormatVersion: 2
+guid: 90a202b9934ec6141b1201d50972548a
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 22604dd76f55453daccee3ed9e7b94b5, type: 3}
+  SerializedAsset: '{"IsCompiled":true,"CompilerVersion":"2.0.9","ReferencedSpecifiers":["@assets/Experience/IdleTOT/Scripts/GameManager"],"Source":"\"use
+    strict\";\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst
+    UnityEngine_1 = require(\"UnityEngine\");\nconst GameManager_1 = require(\"@assets/Experience/IdleTOT/Scripts/GameManager\");\nclass
+    MenuManager extends UnityEngine_1.MonoBehaviour {\n    //Called when script instance
+    is loaded\n    Awake() { }\n    //Start is called on the frame when a script
+    is enabled just\n    //before any of the Update methods are called the first
+    time.\n    Start() {\n        // this.MenuSectionsPanel.SetActive(false);\n       
+    this.totalScoreText.text = this.GameManager.GameValues.get(GameManager_1.GameValue.SCORE)
+    + \" s\";\n        // Add a listener to the button to toggle the menu section\n       
+    for (let i = 0; i < this.MenuSectionsButtons.length; i++) {\n            let
+    index = i;\n            this.MenuSectionsButtons[i].onClick.AddListener(() =>
+    {\n                this.ToggleMenuSection(index);\n            });\n        }\n       
+    //set the score text to update with the CanvasManager score value\n    }\n   
+    ToggleMenuSection(sectionIndex) {\n        for (let i = 0; i < this.MenuSections.length;
+    i++) {\n            this.MenuSections[i].SetActive(false);\n        }\n       
+    this.MenuSections[sectionIndex].SetActive(true);\n    }\n    UpdateTotalScore(score)
+    {\n        this.GameManager.GameValues.set(GameManager_1.GameValue.SCORE, score);\n       
+    this.totalScoreText.text = score.toString() + \" s\";\n    }\n    BuyItem(cost)
+    {\n        //deduct cost from total score\n        //update total score text\n       
+    let currentScore = this.GameManager.GameValues.get(GameManager_1.GameValue.SCORE);\n       
+    console.log(\"Buy Button Clicked : total Score\" + currentScore + \" cost \"
+    + cost);\n        if ((currentScore - cost) >= 0) {\n            this.UpdateTotalScore(currentScore
+    - cost);\n        }\n    }\n}\nexports.default = MenuManager;\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiTWVudU1hbmFnZXIuanMiLCJtYXBwaW5ncyI6Ijs7QUFBQSw2Q0FBcUQ7QUFHckQsZ0ZBQW9EO0FBRXBELE1BQXFCLFdBQVksU0FBUSwyQkFBYTtJQWVsRCx1Q0FBc0M7SUFDOUIsS0FBSyxLQUFXO0lBRXhCLDREQUEyRDtJQUMzRCw2REFBNEQ7SUFDcEQsS0FBSztRQUNWLDJDQUEwQztRQUV6QyxJQUFJLENBQUMsY0FBYyxDQUFDLElBQUksR0FBRyxJQUFJLENBQUMsV0FBVyxDQUFDLFVBQVUsQ0FBQyxHQUFHLENBQUMsdUJBQVMsQ0FBQyxLQUFLLENBQUMsR0FBRyxJQUFJO1FBRTlFLDBEQUF5RDtRQUN6RCxLQUFLLElBQUksQ0FBQyxHQUFHLENBQUMsRUFBRSxDQUFDLEdBQUcsSUFBSSxDQUFDLG1CQUFtQixDQUFDLE1BQU0sRUFBRSxDQUFDLEVBQUUsRUFBRTtZQUN0RCxJQUFJLEtBQUssR0FBRyxDQUFDO1lBQ2IsSUFBSSxDQUFDLG1CQUFtQixDQUFDLENBQUMsQ0FBQyxDQUFDLE9BQU8sQ0FBQyxXQUFXLENBQUMsR0FBRyxFQUFFO2dCQUNqRCxJQUFJLENBQUMsaUJBQWlCLENBQUMsS0FBSyxDQUFDO1lBQ2pDLENBQUMsQ0FBQztRQUNOO1FBRUEsaUVBQWdFO0lBQ3hFO0lBRVEsaUJBQWlCLENBQUMsWUFBaUI7UUFDdkMsS0FBSyxJQUFJLENBQUMsR0FBRyxDQUFDLEVBQUUsQ0FBQyxHQUFHLElBQUksQ0FBQyxZQUFZLENBQUMsTUFBTSxFQUFFLENBQUMsRUFBRSxFQUFFO1lBQy9DLElBQUksQ0FBQyxZQUFZLENBQUMsQ0FBQyxDQUFDLENBQUMsU0FBUyxDQUFDLEtBQUssQ0FBQztRQUN6QztRQUNBLElBQUksQ0FBQyxZQUFZLENBQUMsWUFBWSxDQUFDLENBQUMsU0FBUyxDQUFDLElBQUksQ0FBQztJQUNuRDtJQUVPLGdCQUFnQixDQUFDLEtBQVU7UUFDOUIsSUFBSSxDQUFDLFdBQVcsQ0FBQyxVQUFVLENBQUMsR0FBRyxDQUFDLHVCQUFTLENBQUMsS0FBSyxFQUFFLEtBQUssQ0FBQztRQUN2RCxJQUFJLENBQUMsY0FBYyxDQUFDLElBQUksR0FBRyxLQUFLLENBQUMsUUFBUSxFQUFFLEdBQUcsSUFBSTtJQUN0RDtJQUVPLE9BQU8sQ0FBQyxJQUFTO1FBQ3BCLDhCQUE2QjtRQUM3Qix5QkFBd0I7UUFDeEIsSUFBSSxZQUFZLEdBQUcsSUFBSSxDQUFDLFdBQVcsQ0FBQyxVQUFVLENBQUMsR0FBRyxDQUFDLHVCQUFTLENBQUMsS0FBSyxDQUFDO1FBQ25FLE9BQU8sQ0FBQyxHQUFHLENBQUMsa0NBQWtDLEdBQUcsWUFBWSxHQUFHLFFBQVEsR0FBRyxJQUFJLENBQUM7UUFDaEYsSUFBRyxDQUFDLFlBQVksR0FBQyxJQUFJLENBQUMsSUFBSSxDQUFDLEVBQUc7WUFHMUIsSUFBSSxDQUFDLGdCQUFnQixDQUFDLFlBQVksR0FBQyxJQUFJLENBQUM7UUFDNUM7SUFFSjtDQUlKO0FBL0RBLDhCQStEQSIsIm5hbWVzIjpbXSwiaWdub3JlTGlzdCI6W10sInNvdXJjZXMiOlsiTWVudU1hbmFnZXIudHMiXSwic291cmNlc0NvbnRlbnQiOltudWxsXX0=","ScriptHash":"66074a7ffa1f424d2751255d503c8b65","Specifier":"@assets/Experience/IdleTOT/Scripts/MenuManager","DefaultTypeName":"@assets/Experience/IdleTOT/Scripts/MenuManager.MenuManager","IsMonobehaviour":true,"IsScriptableObj":false,"InheritanceChain":["@assets/Experience/IdleTOT/Scripts/MenuManager.MenuManager","UnityEngine.MonoBehaviour","UnityEngine.Behaviour","UnityEngine.Component","UnityEngine.Object","@com.genies.scripting@1.6.0\\Runtime\\Typing\\index.d.System.Object"],"Properties":[{"Path":"MenuSectionsPanel","Name":"MenuSectionsPanel","TypeName":"UnityEngine.GameObject","AssemblyName":null,"EnumKeys":[],"EnumValues":[],"IsGeniesBehaviourRef":false,"IsGeniesScriptableObjectRef":false,"Decorators":[{"Type":"Header","Args":["\"Menu
+    Section References\""]},{"Type":"SerializeField","Args":[]}],"Initializers":[],"ArrayDimension":-1,"IsArray":false,"IsEnum":false,"ArrayElementInitializer":null,"ChildProperties":[],"PrettyName":"Menu
+    Sections Panel"},{"Path":"MenuSections","Name":"MenuSections","TypeName":"UnityEngine.GameObject","AssemblyName":null,"EnumKeys":[],"EnumValues":[],"IsGeniesBehaviourRef":false,"IsGeniesScriptableObjectRef":false,"Decorators":[{"Type":"SerializeField","Args":[]}],"Initializers":[],"ArrayDimension":1,"IsArray":true,"IsEnum":false,"ArrayElementInitializer":{"Path":"MenuSections_D1","Name":"MenuSections","TypeName":"UnityEngine.GameObject","AssemblyName":null,"EnumKeys":[],"EnumValues":[],"IsGeniesBehaviourRef":false,"IsGeniesScriptableObjectRef":false,"Decorators":[],"Initializers":[],"ArrayDimension":1,"IsArray":false,"IsEnum":false,"ArrayElementInitializer":null,"ChildProperties":[],"PrettyName":"Menu
+    Sections"},"ChildProperties":[],"PrettyName":"Menu Sections"},{"Path":"MenuSectionsButtons","Name":"MenuSectionsButtons","TypeName":"UnityEngine.UI.Button","AssemblyName":null,"EnumKeys":[],"EnumValues":[],"IsGeniesBehaviourRef":false,"IsGeniesScriptableObjectRef":false,"Decorators":[{"Type":"SerializeField","Args":[]}],"Initializers":[],"ArrayDimension":1,"IsArray":true,"IsEnum":false,"ArrayElementInitializer":{"Path":"MenuSectionsButtons_D1","Name":"MenuSectionsButtons","TypeName":"UnityEngine.UI.Button","AssemblyName":null,"EnumKeys":[],"EnumValues":[],"IsGeniesBehaviourRef":false,"IsGeniesScriptableObjectRef":false,"Decorators":[],"Initializers":[],"ArrayDimension":1,"IsArray":false,"IsEnum":false,"ArrayElementInitializer":null,"ChildProperties":[],"PrettyName":"Menu
+    Sections Buttons"},"ChildProperties":[],"PrettyName":"Menu Sections Buttons"},{"Path":"totalScoreText","Name":"totalScoreText","TypeName":"TMPro.TMP_Text","AssemblyName":null,"EnumKeys":[],"EnumValues":[],"IsGeniesBehaviourRef":false,"IsGeniesScriptableObjectRef":false,"Decorators":[{"Type":"SerializeField","Args":[]}],"Initializers":[],"ArrayDimension":-1,"IsArray":false,"IsEnum":false,"ArrayElementInitializer":null,"ChildProperties":[],"PrettyName":"Total
+    Score Text"},{"Path":"GameManager","Name":"GameManager","TypeName":"@assets/Experience/IdleTOT/Scripts/GameManager.GameManager","AssemblyName":null,"EnumKeys":[],"EnumValues":[],"IsGeniesBehaviourRef":true,"IsGeniesScriptableObjectRef":false,"Decorators":[],"Initializers":[],"ArrayDimension":-1,"IsArray":false,"IsEnum":false,"ArrayElementInitializer":null,"ChildProperties":[],"PrettyName":"Game
+    Manager"}],"SupportedUiEvents":0,"DisplayName":"MenuManager","name":"MenuManager","hideFlags":8}'
