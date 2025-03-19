@@ -1140,8 +1140,220 @@ MonoBehaviour:
     PropType: 4
     PropKey: scoreText
     BasePath: scoreText
+  - IntValue: 0
+    LongValue: 0
+    DoubleValue: 0
+    FloatValue: 0
+    BoolValue: 0
+    StringValue: 
+    ColorValue: {r: 0, g: 0, b: 0, a: 0}
+    UnityObjectReference: {fileID: 0}
+    LayerMaskValue:
+      serializedVersion: 2
+      m_Bits: 0
+    Vector2Value: {x: 0, y: 0}
+    Vector3Value: {x: 0, y: 0, z: 0}
+    Vector4Value: {x: 0, y: 0, z: 0, w: 0}
+    RectValue:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    AnimationCurveValue:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    BoundsValue:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+    QuaternionValue: {x: 0, y: 0, z: 0, w: 0}
+    Vector2IntValue: {x: 0, y: 0}
+    Vector3IntValue: {x: 0, y: 0, z: 0}
+    RectIntValue:
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    BoundsIntValue:
+      m_Position: {x: 0, y: 0, z: 0}
+      m_Size: {x: 0, y: 0, z: 0}
+    GeniesBehaviourReference: {fileID: 0}
+    GeniesSOReference: {fileID: 0}
+    SerializedCsObjectValue: 
+    CsObjectReferences: []
+    TypeName: UnityEngine.UI.Button
+    ArrayLength: 0
+    IsArray: 0
+    ArrayDimension: -1
+    IsExpanded: 0
+    IsPrefabOverride: 0
+    PropType: 4
+    PropKey: menuButton
+    BasePath: menuButton
+  - IntValue: 0
+    LongValue: 0
+    DoubleValue: 0
+    FloatValue: 0
+    BoolValue: 0
+    StringValue: 
+    ColorValue: {r: 0, g: 0, b: 0, a: 0}
+    UnityObjectReference: {fileID: 0}
+    LayerMaskValue:
+      serializedVersion: 2
+      m_Bits: 0
+    Vector2Value: {x: 0, y: 0}
+    Vector3Value: {x: 0, y: 0, z: 0}
+    Vector4Value: {x: 0, y: 0, z: 0, w: 0}
+    RectValue:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    AnimationCurveValue:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    BoundsValue:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+    QuaternionValue: {x: 0, y: 0, z: 0, w: 0}
+    Vector2IntValue: {x: 0, y: 0}
+    Vector3IntValue: {x: 0, y: 0, z: 0}
+    RectIntValue:
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    BoundsIntValue:
+      m_Position: {x: 0, y: 0, z: 0}
+      m_Size: {x: 0, y: 0, z: 0}
+    GeniesBehaviourReference: {fileID: 0}
+    GeniesSOReference: {fileID: 0}
+    SerializedCsObjectValue: 
+    CsObjectReferences: []
+    TypeName: UnityEngine.UI.Button
+    ArrayLength: 0
+    IsArray: 0
+    ArrayDimension: -1
+    IsExpanded: 0
+    IsPrefabOverride: 0
+    PropType: 4
+    PropKey: closeMenu
+    BasePath: closeMenu
+  - IntValue: 0
+    LongValue: 0
+    DoubleValue: 0
+    FloatValue: 0
+    BoolValue: 0
+    StringValue: 
+    ColorValue: {r: 0, g: 0, b: 0, a: 0}
+    UnityObjectReference: {fileID: 0}
+    LayerMaskValue:
+      serializedVersion: 2
+      m_Bits: 0
+    Vector2Value: {x: 0, y: 0}
+    Vector3Value: {x: 0, y: 0, z: 0}
+    Vector4Value: {x: 0, y: 0, z: 0, w: 0}
+    RectValue:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    AnimationCurveValue:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    BoundsValue:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+    QuaternionValue: {x: 0, y: 0, z: 0, w: 0}
+    Vector2IntValue: {x: 0, y: 0}
+    Vector3IntValue: {x: 0, y: 0, z: 0}
+    RectIntValue:
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    BoundsIntValue:
+      m_Position: {x: 0, y: 0, z: 0}
+      m_Size: {x: 0, y: 0, z: 0}
+    GeniesBehaviourReference: {fileID: 0}
+    GeniesSOReference: {fileID: 0}
+    SerializedCsObjectValue: 
+    CsObjectReferences: []
+    TypeName: UnityEngine.GameObject
+    ArrayLength: 0
+    IsArray: 0
+    ArrayDimension: -1
+    IsExpanded: 0
+    IsPrefabOverride: 0
+    PropType: 4
+    PropKey: menuPanel
+    BasePath: menuPanel
+  - IntValue: 0
+    LongValue: 0
+    DoubleValue: 0
+    FloatValue: 0
+    BoolValue: 0
+    StringValue: 
+    ColorValue: {r: 0, g: 0, b: 0, a: 0}
+    UnityObjectReference: {fileID: 0}
+    LayerMaskValue:
+      serializedVersion: 2
+      m_Bits: 0
+    Vector2Value: {x: 0, y: 0}
+    Vector3Value: {x: 0, y: 0, z: 0}
+    Vector4Value: {x: 0, y: 0, z: 0, w: 0}
+    RectValue:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    AnimationCurveValue:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    BoundsValue:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+    QuaternionValue: {x: 0, y: 0, z: 0, w: 0}
+    Vector2IntValue: {x: 0, y: 0}
+    Vector3IntValue: {x: 0, y: 0, z: 0}
+    RectIntValue:
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    BoundsIntValue:
+      m_Position: {x: 0, y: 0, z: 0}
+      m_Size: {x: 0, y: 0, z: 0}
+    GeniesBehaviourReference: {fileID: 0}
+    GeniesSOReference: {fileID: 0}
+    SerializedCsObjectValue: 
+    CsObjectReferences: []
+    TypeName: '@assets/Experience/IdleTOT/Scripts/MenuManager.MenuManager'
+    ArrayLength: 0
+    IsArray: 0
+    ArrayDimension: -1
+    IsExpanded: 0
+    IsPrefabOverride: 0
+    PropType: 1
+    PropKey: MenuManager
+    BasePath: MenuManager
   _script: {fileID: 4458252877524076426, guid: 1a30ab28d1b63444db83fc3b5554aad3, type: 3}
-  _scriptAssetHash: feb97cf5ada63bc2f86c3c9434f2f5a7
+  _scriptAssetHash: 9e7adb42dd92d837d6bef8bdda4b996d
   UiEventForwarders: []
 --- !u!224 &1360038059
 RectTransform:
@@ -1378,61 +1590,8 @@ MonoBehaviour:
     PropType: 4
     PropKey: prefab
     BasePath: prefab
-  - IntValue: 0
-    LongValue: 0
-    DoubleValue: 0
-    FloatValue: 3
-    BoolValue: 0
-    StringValue: 
-    ColorValue: {r: 0, g: 0, b: 0, a: 0}
-    UnityObjectReference: {fileID: 0}
-    LayerMaskValue:
-      serializedVersion: 2
-      m_Bits: 0
-    Vector2Value: {x: 0, y: 0}
-    Vector3Value: {x: 0, y: 0, z: 0}
-    Vector4Value: {x: 0, y: 0, z: 0, w: 0}
-    RectValue:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    AnimationCurveValue:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    BoundsValue:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
-    QuaternionValue: {x: 0, y: 0, z: 0, w: 0}
-    Vector2IntValue: {x: 0, y: 0}
-    Vector3IntValue: {x: 0, y: 0, z: 0}
-    RectIntValue:
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    BoundsIntValue:
-      m_Position: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0, z: 0}
-    GeniesBehaviourReference: {fileID: 0}
-    GeniesSOReference: {fileID: 0}
-    SerializedCsObjectValue: 
-    CsObjectReferences: []
-    TypeName: System.Single
-    ArrayLength: 0
-    IsArray: 0
-    ArrayDimension: -1
-    IsExpanded: 0
-    IsPrefabOverride: 0
-    PropType: 7
-    PropKey: ItemSpawnDelay
-    BasePath: ItemSpawnDelay
   _script: {fileID: 4458252877524076426, guid: 82e35991918c9e84fa36a895238b9ddb, type: 3}
-  _scriptAssetHash: be5b574731ead2587eb33acf27d6e5cd
+  _scriptAssetHash: 262b16a2ce07f5c19360c959116263ec
   UiEventForwarders: []
 --- !u!4 &1545409000
 Transform:
@@ -1688,9 +1847,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 858dc640ae684bacb8622d5d44eb4ff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _serializedProperties: []
+  _serializedProperties:
+  - IntValue: 0
+    LongValue: 0
+    DoubleValue: 0
+    FloatValue: 0
+    BoolValue: 0
+    StringValue: 
+    ColorValue: {r: 0, g: 0, b: 0, a: 0}
+    UnityObjectReference: {fileID: 0}
+    LayerMaskValue:
+      serializedVersion: 2
+      m_Bits: 0
+    Vector2Value: {x: 0, y: 0}
+    Vector3Value: {x: 0, y: 0, z: 0}
+    Vector4Value: {x: 0, y: 0, z: 0, w: 0}
+    RectValue:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    AnimationCurveValue:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    BoundsValue:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+    QuaternionValue: {x: 0, y: 0, z: 0, w: 0}
+    Vector2IntValue: {x: 0, y: 0}
+    Vector3IntValue: {x: 0, y: 0, z: 0}
+    RectIntValue:
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    BoundsIntValue:
+      m_Position: {x: 0, y: 0, z: 0}
+      m_Size: {x: 0, y: 0, z: 0}
+    GeniesBehaviourReference: {fileID: 0}
+    GeniesSOReference: {fileID: 0}
+    SerializedCsObjectValue: 
+    CsObjectReferences: []
+    TypeName: \node_modules\typescript\lib\lib.es2015.collection.d.Map
+    ArrayLength: 0
+    IsArray: 0
+    ArrayDimension: -1
+    IsExpanded: 0
+    IsPrefabOverride: 0
+    PropType: 0
+    PropKey: GameValues
+    BasePath: GameValues
   _script: {fileID: 4458252877524076426, guid: 3cdcb4855b61ed3498170f48f734e8ef, type: 3}
-  _scriptAssetHash: e6115a2abb8f1b69556eebfe2875ec57
+  _scriptAssetHash: 0377da159b2b3f203523b96a31448d03
   UiEventForwarders: []
 --- !u!4 &2134616280
 Transform:
@@ -1937,8 +2149,114 @@ MonoBehaviour:
     PropType: 1
     PropKey: canvasManager
     BasePath: canvasManager
+  - IntValue: 0
+    LongValue: 0
+    DoubleValue: 0
+    FloatValue: 0
+    BoolValue: 0
+    StringValue: 
+    ColorValue: {r: 0, g: 0, b: 0, a: 0}
+    UnityObjectReference: {fileID: 0}
+    LayerMaskValue:
+      serializedVersion: 2
+      m_Bits: 0
+    Vector2Value: {x: 0, y: 0}
+    Vector3Value: {x: 0, y: 0, z: 0}
+    Vector4Value: {x: 0, y: 0, z: 0, w: 0}
+    RectValue:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    AnimationCurveValue:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    BoundsValue:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+    QuaternionValue: {x: 0, y: 0, z: 0, w: 0}
+    Vector2IntValue: {x: 0, y: 0}
+    Vector3IntValue: {x: 0, y: 0, z: 0}
+    RectIntValue:
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    BoundsIntValue:
+      m_Position: {x: 0, y: 0, z: 0}
+      m_Size: {x: 0, y: 0, z: 0}
+    GeniesBehaviourReference: {fileID: 0}
+    GeniesSOReference: {fileID: 0}
+    SerializedCsObjectValue: 
+    CsObjectReferences: []
+    TypeName: UnityEngine.AudioSource
+    ArrayLength: 0
+    IsArray: 0
+    ArrayDimension: -1
+    IsExpanded: 0
+    IsPrefabOverride: 0
+    PropType: 4
+    PropKey: Yeah
+    BasePath: Yeah
+  - IntValue: 0
+    LongValue: 0
+    DoubleValue: 0
+    FloatValue: 0
+    BoolValue: 0
+    StringValue: 
+    ColorValue: {r: 0, g: 0, b: 0, a: 0}
+    UnityObjectReference: {fileID: 0}
+    LayerMaskValue:
+      serializedVersion: 2
+      m_Bits: 0
+    Vector2Value: {x: 0, y: 0}
+    Vector3Value: {x: 0, y: 0, z: 0}
+    Vector4Value: {x: 0, y: 0, z: 0, w: 0}
+    RectValue:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    AnimationCurveValue:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    BoundsValue:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+    QuaternionValue: {x: 0, y: 0, z: 0, w: 0}
+    Vector2IntValue: {x: 0, y: 0}
+    Vector3IntValue: {x: 0, y: 0, z: 0}
+    RectIntValue:
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    BoundsIntValue:
+      m_Position: {x: 0, y: 0, z: 0}
+      m_Size: {x: 0, y: 0, z: 0}
+    GeniesBehaviourReference: {fileID: 0}
+    GeniesSOReference: {fileID: 0}
+    SerializedCsObjectValue: 
+    CsObjectReferences: []
+    TypeName: UnityEngine.AudioClip
+    ArrayLength: 0
+    IsArray: 0
+    ArrayDimension: -1
+    IsExpanded: 0
+    IsPrefabOverride: 0
+    PropType: 4
+    PropKey: Yclip
+    BasePath: Yclip
   _script: {fileID: 4458252877524076426, guid: be78e8a8c0453d149b7b3688233ede3a, type: 3}
-  _scriptAssetHash: aa25b9a6a78b449f76ce53b78449156e
+  _scriptAssetHash: 7abb243e0bc81efd08b3bda83abe1fa7
   UiEventForwarders: []
 --- !u!4 &3285411674210837050 stripped
 Transform:

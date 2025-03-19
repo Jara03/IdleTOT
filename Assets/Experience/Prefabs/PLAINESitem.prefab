@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9175793084271832071}
   - component: {fileID: 7138086690830111224}
   m_Layer: 0
-  m_Name: SimpleObstacle
+  m_Name: PLAINESitem
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4d8da3b8d369b48759fafd6bae3a5dea, type: 2}
+  - {fileID: 2100000, guid: 7ef71ba264cda39478bf677af3a4d1f5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

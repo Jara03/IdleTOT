@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 12539ea55e4b1e34ab9d234a160c58ec
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 22604dd76f55453daccee3ed9e7b94b5, type: 3}
+  SerializedAsset: '{"IsCompiled":true,"CompilerVersion":"2.0.9","ReferencedSpecifiers":[],"Source":"\"use
+    strict\";\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst
+    UnityEngine_1 = require(\"UnityEngine\");\nclass BiomeManager extends UnityEngine_1.MonoBehaviour
+    {\n    switchBiome(BiomeToSwitch) {\n    }\n    //Called when script instance
+    is loaded\n    Awake() { }\n    //Start is called on the frame when a script
+    is enabled just \n    //before any of the Update methods are called the first
+    time.\n    Start() { }\n    //Update is called every frame, if the MonoBehaviour
+    is enabled.\n    Update() { }\n}\nexports.default = BiomeManager;\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQmlvbWVNYW5hZ2VyLmpzIiwibWFwcGluZ3MiOiI7O0FBQ0EsNkNBQTJDO0FBQzNDLE1BQXFCLFlBQWEsU0FBUSwyQkFBYTtJQUUzQyxXQUFXLENBQUMsYUFBa0I7SUFHdEM7SUFDQSx1Q0FBc0M7SUFDOUIsS0FBSyxLQUFXO0lBRXhCLDZEQUE0RDtJQUM1RCw2REFBNEQ7SUFDcEQsS0FBSyxLQUFXO0lBRXhCLGdFQUErRDtJQUN2RCxNQUFNLEtBQVc7Q0FDN0I7QUFmQSwrQkFlQSIsIm5hbWVzIjpbXSwiaWdub3JlTGlzdCI6W10sInNvdXJjZXMiOlsiQmlvbWVNYW5hZ2VyLnRzIl0sInNvdXJjZXNDb250ZW50IjpbbnVsbF19","ScriptHash":"4ff165dfe4a4bc1742b92bf4bcd39496","Specifier":"@assets/Experience/IdleTOT/Scripts/BiomeManager","DefaultTypeName":"@assets/Experience/IdleTOT/Scripts/BiomeManager.BiomeManager","IsMonobehaviour":true,"IsScriptableObj":false,"InheritanceChain":["@assets/Experience/IdleTOT/Scripts/BiomeManager.BiomeManager","UnityEngine.MonoBehaviour","UnityEngine.Behaviour","UnityEngine.Component","UnityEngine.Object","@com.genies.scripting@1.6.0\\Runtime\\Typing\\index.d.System.Object"],"Properties":[],"SupportedUiEvents":0,"DisplayName":"BiomeManager","name":"BiomeManager","hideFlags":8}'

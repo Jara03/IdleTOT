@@ -9,13 +9,15 @@ import {
     Vector3,
     WaitForSeconds
 } from "UnityEngine";
-import GameManager, {GameState, GameValue} from "./GameManager";
+import GameManager, {GameState, GameValue, Biomes} from "./GameManager";
 
 export default class HazardItemSpawner extends MonoBehaviour {
 
     @Header("Enemy Settings")
-    @SerializeField private prefab: GameObject;
-
+    @SerializeField private TOTitem: GameObject;
+                    private PLAINESitem: GameObject;
+                    private MINEitem: GameObject;
+                    private DESERTitem: GameObject;
     private spawnPosition: Vector3 = new Vector3(0, -3, 0);
 
     private gameManager: GameManager;
@@ -55,7 +57,25 @@ export default class HazardItemSpawner extends MonoBehaviour {
 
     /** Spawns the initial pool of GameObjects and deactivates them. */
     private CreateItem() {
-            let temp = Object.Instantiate(this.prefab, this.transform) as GameObject;
+        let temp = null;
+            switch (this.gameManager.GameValues.get(GamesValue.CURRENT_BIOME)) {
+                case (this.gameManager.Biomes.get(Biomes.TOT)):
+                    temp = Object.Instantiate(this.TOTitem, this.transform) as GameObject;
+                break;
+                case (this.gameManager.Biomes.get(Biomes.PLAINES)):
+                    temp = Object.Instantiate(this.PLAINESitem, this.transform) as GameObject;
+                    break;
+                case (this.gameManager.Biomes.get(Biomes.MINE)):
+                    temp = Object.Instantiate(this.MINEitem, this.transform) as GameObject;
+                    break;
+                case (this.gameManager.Biomes.get(Biomes.DESERT)):
+                    temp = Object.Instantiate(this.DESERTitem, this.transform) as GameObject;
+                    break;
+                    default:
+                        temp = Object.Instantiate(this.TOTitem, this.transform) as GameObject;
+                        break;
+            }
+
             temp.SetActive(false);
             return temp;
     }
