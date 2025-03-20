@@ -9,13 +9,15 @@ import {
     Vector3,
     WaitForSeconds
 } from "UnityEngine";
-import GameManager, {GameState, GameValue} from "./GameManager";
+import GameManager, {GameState, GameValue, Biomes} from "./GameManager";
 
 export default class HazardItemSpawner extends MonoBehaviour {
 
     @Header("Enemy Settings")
-    @SerializeField private prefab: GameObject;
-
+    @SerializeField public TotItem: GameObject;
+    @SerializeField public PlainesItem: GameObject;
+    @SerializeField public MineItem: GameObject;
+    @SerializeField public DesertItem: GameObject;
     private spawnPosition: Vector3 = new Vector3(0, -3, 0);
 
     private gameManager: GameManager;
@@ -55,7 +57,25 @@ export default class HazardItemSpawner extends MonoBehaviour {
 
     /** Spawns the initial pool of GameObjects and deactivates them. */
     private CreateItem() {
-            let temp = Object.Instantiate(this.prefab, this.transform) as GameObject;
+        let temp = null;
+            switch (this.gameManager.GameValues.get(GameValue.CURRENT_BIOME)) {
+                case (Biomes.TOT):
+                    temp = Object.Instantiate(this.TotItem, this.transform) as GameObject;
+                break;
+                case (Biomes.PLAINES):
+                    temp = Object.Instantiate(this.PlainesItem, this.transform) as GameObject;
+                    break;
+                case (Biomes.MINE):
+                    temp = Object.Instantiate(this.MineItem, this.transform) as GameObject;
+                    break;
+                case (Biomes.DESERT):
+                    temp = Object.Instantiate(this.DesertItem, this.transform) as GameObject;
+                    break;
+                    default:
+                        temp = Object.Instantiate(this.TotItem, this.transform) as GameObject;
+                        break;
+            }
+
             temp.SetActive(false);
             return temp;
     }

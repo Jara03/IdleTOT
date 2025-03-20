@@ -13,6 +13,13 @@ export enum GameValue {
     HIGH_SCORE,
     SPAWN_RATE,
     SECONDS_PER_WIN,
+    CURRENT_BIOME
+}
+export enum Biomes {
+    TOT,
+    PLAINES,
+    MINE,
+    DESERT
 }
 
 export default class GameManager extends MonoBehaviour {
@@ -25,7 +32,7 @@ export default class GameManager extends MonoBehaviour {
     private gameState: GameState;
 
     public GameValues: Map<GameValue, number> = new Map<GameValue, number>();
-
+    public Biomes:Biomes;
     Awake() {
         //Establishes the GameManager singleton instance
         if(GameManager.Instance == null) {
@@ -39,6 +46,7 @@ export default class GameManager extends MonoBehaviour {
         this.GameValues.set(GameValue.HIGH_SCORE, 0);
         this.GameValues.set(GameValue.SPAWN_RATE, 5);
         this.GameValues.set(GameValue.SECONDS_PER_WIN, 1);
+        this.GameValues.set(GameValue.CURRENT_BIOME, Biomes.TOT);
     }
 
     Start() {
@@ -69,4 +77,6 @@ export default class GameManager extends MonoBehaviour {
     public UpdateGameValue(value: GameValue, amount: number) {
         this.GameValues.set(value, this.GameValues.get(value) + amount);
     }
+
+
 }

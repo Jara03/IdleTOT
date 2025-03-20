@@ -9,8 +9,8 @@ ScriptedImporter:
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 22604dd76f55453daccee3ed9e7b94b5, type: 3}
   SerializedAsset: '{"IsCompiled":true,"CompilerVersion":"2.0.9","ReferencedSpecifiers":[],"Source":"\"use
-    strict\";\nObject.defineProperty(exports, \"__esModule\", { value: true });\nexports.GameValue
-    = exports.GameState = void 0;\nconst UnityEngine_1 = require(\"UnityEngine\");\nvar
+    strict\";\nObject.defineProperty(exports, \"__esModule\", { value: true });\nexports.Biomes
+    = exports.GameValue = exports.GameState = void 0;\nconst UnityEngine_1 = require(\"UnityEngine\");\nvar
     GameState;\n(function (GameState) {\n    GameState[GameState[\"INITIAL\"] = 0]
     = \"INITIAL\";\n    GameState[GameState[\"LOADING\"] = 1] = \"LOADING\";\n   
     GameState[GameState[\"GAME_PLAY\"] = 2] = \"GAME_PLAY\";\n    GameState[GameState[\"GAME_OVER\"]
@@ -18,26 +18,31 @@ ScriptedImporter:
     GameValue;\n(function (GameValue) {\n    GameValue[GameValue[\"SCORE\"] = 0]
     = \"SCORE\";\n    GameValue[GameValue[\"HIGH_SCORE\"] = 1] = \"HIGH_SCORE\";\n   
     GameValue[GameValue[\"SPAWN_RATE\"] = 2] = \"SPAWN_RATE\";\n    GameValue[GameValue[\"SECONDS_PER_WIN\"]
-    = 3] = \"SECONDS_PER_WIN\";\n})(GameValue || (exports.GameValue = GameValue =
-    {}));\nclass GameManager extends UnityEngine_1.MonoBehaviour {\n    constructor()
-    {\n        super(...arguments);\n        /** This is an event that is triggered
-    when the current GameState changes. */\n        this.OnGameStateChange = new
-    GeniesEvent();\n        this.GameValues = new Map();\n    }\n    Awake() {\n       
-    //Establishes the GameManager singleton instance\n        if (GameManager.Instance
+    = 3] = \"SECONDS_PER_WIN\";\n    GameValue[GameValue[\"CURRENT_BIOME\"] = 4]
+    = \"CURRENT_BIOME\";\n})(GameValue || (exports.GameValue = GameValue = {}));\nvar
+    Biomes;\n(function (Biomes) {\n    Biomes[Biomes[\"TOT\"] = 0] = \"TOT\";\n   
+    Biomes[Biomes[\"PLAINES\"] = 1] = \"PLAINES\";\n    Biomes[Biomes[\"MINE\"] =
+    2] = \"MINE\";\n    Biomes[Biomes[\"DESERT\"] = 3] = \"DESERT\";\n})(Biomes ||
+    (exports.Biomes = Biomes = {}));\nclass GameManager extends UnityEngine_1.MonoBehaviour
+    {\n    constructor() {\n        super(...arguments);\n        /** This is an
+    event that is triggered when the current GameState changes. */\n        this.OnGameStateChange
+    = new GeniesEvent();\n        this.GameValues = new Map();\n    }\n    Awake()
+    {\n        //Establishes the GameManager singleton instance\n        if (GameManager.Instance
     == null) {\n            GameManager.Instance = this;\n        }\n        else
     {\n            UnityEngine_1.GameObject.Destroy(this.gameObject);\n        }\n       
     this.GameValues.set(GameValue.SCORE, 10);\n        this.GameValues.set(GameValue.HIGH_SCORE,
     0);\n        this.GameValues.set(GameValue.SPAWN_RATE, 5);\n        this.GameValues.set(GameValue.SECONDS_PER_WIN,
-    1);\n    }\n    Start() {\n        //Set the game state to LOADING at the Start\n       
-    //this.ChangeGameState(GameState.LOADING);\n    }\n    /** @returns the game''s
-    current GameState value */\n    GetGameState() {\n        return this.gameState;\n   
-    }\n    /**\n     * This will set the current GameState value to a new value and
-    trigger an event.\n     * @param newState the new GameState value\n     * @returns
-    will return early if the new value equals the current value\n     */\n    ChangeGameState(newState)
-    {\n        if (newState == this.gameState) {\n            return;\n        }\n       
-    console.log(\"New Game State Change: \", newState);\n        this.OnGameStateChange.trigger(newState);\n       
+    1);\n        this.GameValues.set(GameValue.CURRENT_BIOME, Biomes.TOT);\n    }\n   
+    Start() {\n        //Set the game state to LOADING at the Start\n        //this.ChangeGameState(GameState.LOADING);\n   
+    }\n    /** @returns the game''s current GameState value */\n    GetGameState()
+    {\n        return this.gameState;\n    }\n    /**\n     * This will set the current
+    GameState value to a new value and trigger an event.\n     * @param newState
+    the new GameState value\n     * @returns will return early if the new value equals
+    the current value\n     */\n    ChangeGameState(newState) {\n        if (newState
+    == this.gameState) {\n            return;\n        }\n        console.log(\"New
+    Game State Change: \", newState);\n        this.OnGameStateChange.trigger(newState);\n       
     this.gameState = newState;\n    }\n    UpdateGameValue(value, amount) {\n       
     this.GameValues.set(value, this.GameValues.get(value) + amount);\n    }\n}\nexports.default
-    = GameManager;\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiR2FtZU1hbmFnZXIuanMiLCJtYXBwaW5ncyI6Ijs7O0FBQUEsNkNBQXVEO0FBR3ZELElBQVksU0FLWjtBQUxBLFdBQVksU0FBUztJQUNqQiwrQ0FBTztJQUNQLCtDQUFPO0lBQ1AsbURBQVM7SUFDVCxtREFBUTtBQUNaLEdBTFksU0FBUyx5QkFBVCxTQUFTLFFBS3JCO0FBRUEsSUFBWSxTQUtaO0FBTEEsV0FBWSxTQUFTO0lBQ2pCLDJDQUFLO0lBQ0wscURBQVU7SUFDVixxREFBVTtJQUNWLCtEQUFlO0FBQ25CLEdBTFksU0FBUyx5QkFBVCxTQUFTLFFBS3JCO0FBRUEsTUFBcUIsV0FBWSxTQUFRLDJCQUFhO0lBQXREOztRQUVJLDZFQUE0RTtRQUNyRSxzQkFBaUIsR0FBNkIsSUFBSSxXQUFXLEVBQWUsQ0FBQztRQU03RSxlQUFVLEdBQTJCLElBQUksR0FBRyxFQUFxQjtJQTZDNUU7SUEzQ0ksS0FBSztRQUNELGdEQUErQztRQUMvQyxJQUFHLFdBQVcsQ0FBQyxRQUFRLElBQUksSUFBSSxFQUFFO1lBQzdCLFdBQVcsQ0FBQyxRQUFRLEdBQUcsSUFBSTtRQUMvQixDQUFDO2FBQUk7WUFDRCx3QkFBVSxDQUFDLE9BQU8sQ0FBQyxJQUFJLENBQUMsVUFBVSxDQUFDO1FBQ3ZDO1FBR0EsSUFBSSxDQUFDLFVBQVUsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLEtBQUssRUFBRSxFQUFFLENBQUM7UUFDeEMsSUFBSSxDQUFDLFVBQVUsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLFVBQVUsRUFBRSxDQUFDLENBQUM7UUFDNUMsSUFBSSxDQUFDLFVBQVUsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLFVBQVUsRUFBRSxDQUFDLENBQUM7UUFDNUMsSUFBSSxDQUFDLFVBQVUsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLGVBQWUsRUFBRSxDQUFDLENBQUM7SUFDckQ7SUFFQSxLQUFLO1FBQ0QsNENBQTJDO1FBQzNDLDBDQUF5QztJQUU3QztJQUVBLGtEQUFpRDtJQUMxQyxZQUFZO1FBQ2YsT0FBTyxJQUFJLENBQUMsU0FBUztJQUN6QjtJQUVBOzs7O09BSUU7SUFDSyxlQUFlLENBQUMsUUFBbUI7UUFDdEMsSUFBSSxRQUFRLElBQUksSUFBSSxDQUFDLFNBQVMsRUFBRTtZQUM1QixPQUFNO1FBQ1Y7UUFDQSxPQUFPLENBQUMsR0FBRyxDQUFDLHlCQUF5QixFQUFFLFFBQVE7UUFDL0MsSUFBSSxDQUFDLGlCQUFpQixDQUFDLE9BQU8sQ0FBQyxRQUFRLENBQUM7UUFDeEMsSUFBSSxDQUFDLFNBQVMsR0FBRyxRQUFRO0lBQzdCO0lBRU8sZUFBZSxDQUFDLEtBQWdCLEVBQUUsTUFBYztRQUNuRCxJQUFJLENBQUMsVUFBVSxDQUFDLEdBQUcsQ0FBQyxLQUFLLEVBQUUsSUFBSSxDQUFDLFVBQVUsQ0FBQyxHQUFHLENBQUMsS0FBSyxDQUFDLEdBQUcsTUFBTSxDQUFDO0lBQ25FO0NBQ0o7QUF0REEsOEJBc0RBIiwibmFtZXMiOltdLCJpZ25vcmVMaXN0IjpbXSwic291cmNlcyI6WyJHYW1lTWFuYWdlci50cyJdLCJzb3VyY2VzQ29udGVudCI6W251bGxdfQ==","ScriptHash":"0377da159b2b3f203523b96a31448d03","Specifier":"@assets/Experience/IdleTOT/Scripts/GameManager","DefaultTypeName":"@assets/Experience/IdleTOT/Scripts/GameManager.GameManager","IsMonobehaviour":true,"IsScriptableObj":false,"InheritanceChain":["@assets/Experience/IdleTOT/Scripts/GameManager.GameManager","UnityEngine.MonoBehaviour","UnityEngine.Behaviour","UnityEngine.Component","UnityEngine.Object","@com.genies.scripting@1.6.0\\Runtime\\Typing\\index.d.System.Object"],"Properties":[{"Path":"GameValues","Name":"GameValues","TypeName":"\\node_modules\\typescript\\lib\\lib.es2015.collection.d.Map","AssemblyName":null,"EnumKeys":[],"EnumValues":[],"IsGeniesBehaviourRef":false,"IsGeniesScriptableObjectRef":false,"Decorators":[],"Initializers":["new
+    = GameManager;\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiR2FtZU1hbmFnZXIuanMiLCJtYXBwaW5ncyI6Ijs7O0FBQUEsNkNBQXVEO0FBR3ZELElBQVksU0FLWjtBQUxBLFdBQVksU0FBUztJQUNqQiwrQ0FBTztJQUNQLCtDQUFPO0lBQ1AsbURBQVM7SUFDVCxtREFBUTtBQUNaLEdBTFksU0FBUyx5QkFBVCxTQUFTLFFBS3JCO0FBRUEsSUFBWSxTQU1aO0FBTkEsV0FBWSxTQUFTO0lBQ2pCLDJDQUFLO0lBQ0wscURBQVU7SUFDVixxREFBVTtJQUNWLCtEQUFlO0lBQ2YsMkRBQVk7QUFDaEIsR0FOWSxTQUFTLHlCQUFULFNBQVMsUUFNckI7QUFDQSxJQUFZLE1BS1o7QUFMQSxXQUFZLE1BQU07SUFDZCxpQ0FBRztJQUNILHlDQUFPO0lBQ1AsbUNBQUk7SUFDSix1Q0FBSztBQUNULEdBTFksTUFBTSxzQkFBTixNQUFNLFFBS2xCO0FBRUEsTUFBcUIsV0FBWSxTQUFRLDJCQUFhO0lBQXREOztRQUVJLDZFQUE0RTtRQUNyRSxzQkFBaUIsR0FBNkIsSUFBSSxXQUFXLEVBQWUsQ0FBQztRQU03RSxlQUFVLEdBQTJCLElBQUksR0FBRyxFQUFxQjtJQWdENUU7SUE5Q0ksS0FBSztRQUNELGdEQUErQztRQUMvQyxJQUFHLFdBQVcsQ0FBQyxRQUFRLElBQUksSUFBSSxFQUFFO1lBQzdCLFdBQVcsQ0FBQyxRQUFRLEdBQUcsSUFBSTtRQUMvQixDQUFDO2FBQUk7WUFDRCx3QkFBVSxDQUFDLE9BQU8sQ0FBQyxJQUFJLENBQUMsVUFBVSxDQUFDO1FBQ3ZDO1FBR0EsSUFBSSxDQUFDLFVBQVUsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLEtBQUssRUFBRSxFQUFFLENBQUM7UUFDeEMsSUFBSSxDQUFDLFVBQVUsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLFVBQVUsRUFBRSxDQUFDLENBQUM7UUFDNUMsSUFBSSxDQUFDLFVBQVUsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLFVBQVUsRUFBRSxDQUFDLENBQUM7UUFDNUMsSUFBSSxDQUFDLFVBQVUsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLGVBQWUsRUFBRSxDQUFDLENBQUM7UUFDakQsSUFBSSxDQUFDLFVBQVUsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLGFBQWEsRUFBRSxNQUFNLENBQUMsR0FBRyxDQUFDO0lBQzVEO0lBRUEsS0FBSztRQUNELDRDQUEyQztRQUMzQywwQ0FBeUM7SUFFN0M7SUFFQSxrREFBaUQ7SUFDMUMsWUFBWTtRQUNmLE9BQU8sSUFBSSxDQUFDLFNBQVM7SUFDekI7SUFFQTs7OztPQUlFO0lBQ0ssZUFBZSxDQUFDLFFBQW1CO1FBQ3RDLElBQUksUUFBUSxJQUFJLElBQUksQ0FBQyxTQUFTLEVBQUU7WUFDNUIsT0FBTTtRQUNWO1FBQ0EsT0FBTyxDQUFDLEdBQUcsQ0FBQyx5QkFBeUIsRUFBRSxRQUFRO1FBQy9DLElBQUksQ0FBQyxpQkFBaUIsQ0FBQyxPQUFPLENBQUMsUUFBUSxDQUFDO1FBQ3hDLElBQUksQ0FBQyxTQUFTLEdBQUcsUUFBUTtJQUM3QjtJQUVPLGVBQWUsQ0FBQyxLQUFnQixFQUFFLE1BQWM7UUFDbkQsSUFBSSxDQUFDLFVBQVUsQ0FBQyxHQUFHLENBQUMsS0FBSyxFQUFFLElBQUksQ0FBQyxVQUFVLENBQUMsR0FBRyxDQUFDLEtBQUssQ0FBQyxHQUFHLE1BQU0sQ0FBQztJQUNuRTtDQUdKO0FBekRBLDhCQXlEQSIsIm5hbWVzIjpbXSwiaWdub3JlTGlzdCI6W10sInNvdXJjZXMiOlsiR2FtZU1hbmFnZXIudHMiXSwic291cmNlc0NvbnRlbnQiOltudWxsXX0=","ScriptHash":"088e41c41cf4e6339a6444435c9200ac","Specifier":"@assets/Experience/IdleTOT/Scripts/GameManager","DefaultTypeName":"@assets/Experience/IdleTOT/Scripts/GameManager.GameManager","IsMonobehaviour":true,"IsScriptableObj":false,"InheritanceChain":["@assets/Experience/IdleTOT/Scripts/GameManager.GameManager","UnityEngine.MonoBehaviour","UnityEngine.Behaviour","UnityEngine.Component","UnityEngine.Object","@com.genies.scripting@1.6.0\\Runtime\\Typing\\index.d.System.Object"],"Properties":[{"Path":"GameValues","Name":"GameValues","TypeName":"\\node_modules\\typescript\\lib\\lib.es2015.collection.d.Map","AssemblyName":null,"EnumKeys":[],"EnumValues":[],"IsGeniesBehaviourRef":false,"IsGeniesScriptableObjectRef":false,"Decorators":[],"Initializers":["new
     \\node_modules\\typescript\\lib\\lib.es2015.collection.d.Map();"],"ArrayDimension":-1,"IsArray":false,"IsEnum":false,"ArrayElementInitializer":null,"ChildProperties":[],"PrettyName":"Game
-    Values"}],"SupportedUiEvents":0,"DisplayName":"GameManager","name":"GameManager","hideFlags":8}'
+    Values"},{"Path":"Biomes","Name":"Biomes","TypeName":"@assets/Experience/IdleTOT/Scripts/GameManager.Biomes","AssemblyName":null,"EnumKeys":["TOT","PLAINES","MINE","DESERT"],"EnumValues":["0","1","2","3"],"IsGeniesBehaviourRef":false,"IsGeniesScriptableObjectRef":false,"Decorators":[],"Initializers":[],"ArrayDimension":-1,"IsArray":false,"IsEnum":true,"ArrayElementInitializer":null,"ChildProperties":[],"PrettyName":"Biomes"}],"SupportedUiEvents":0,"DisplayName":"GameManager","name":"GameManager","hideFlags":8}'

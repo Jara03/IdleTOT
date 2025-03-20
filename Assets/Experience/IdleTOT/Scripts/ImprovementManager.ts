@@ -2,7 +2,8 @@
 import {GameObject, MonoBehaviour} from "UnityEngine";
 import {Button} from "UnityEngine.UI";
 import MenuManager from "@assets/Experience/IdleTOT/Scripts/MenuManager";
-import GameManager, {GameValue} from "@assets/Experience/IdleTOT/Scripts/GameManager";
+import GameManager, {Biomes, GameValue} from "@assets/Experience/IdleTOT/Scripts/GameManager";
+import BiomeManager from "@assets/Experience/IdleTOT/Scripts/BiomeManager";
 
 
 
@@ -20,6 +21,10 @@ export default class ImprovementManager extends MonoBehaviour {
 
 
     private gameManager: GameManager;
+    public BiomeManager: BiomeManager;
+
+    public BiomeImproved: Biomes;
+    public EnterBiomeButton: Button;
 
 
     //Start is called on the frame when a script is enabled just
@@ -37,13 +42,13 @@ export default class ImprovementManager extends MonoBehaviour {
                 this.ApplyImprovement(i);
             });
         }
+
+        this.EnterBiomeButton.onClick.AddListener(() => {
+            this.GoToZone(this.BiomeImproved);
+            })
     }
     private Awake() : void {
 
-
-    }
-
-    private onEnable(): void {
 
     }
 
@@ -73,6 +78,12 @@ export default class ImprovementManager extends MonoBehaviour {
             default:
                 break;
         }
+    }
+
+    private GoToZone(duration: number) : void {
+
+        this.BiomeManager.switchBiome(this.BiomeImproved,duration);
+
     }
 
 }
