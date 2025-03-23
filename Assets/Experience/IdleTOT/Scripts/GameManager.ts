@@ -10,6 +10,7 @@ export enum GameState {
 
 export enum GameValue {
     SCORE,
+    PLAINES_SCORE,
     HIGH_SCORE,
     SPAWN_RATE,
     SECONDS_PER_WIN,
@@ -42,7 +43,8 @@ export default class GameManager extends MonoBehaviour {
         }
 
 
-        this.GameValues.set(GameValue.SCORE, 10);
+        this.GameValues.set(GameValue.SCORE, 30);
+        this.GameValues.set(GameValue.PLAINES_SCORE, 0);
         this.GameValues.set(GameValue.HIGH_SCORE, 0);
         this.GameValues.set(GameValue.SPAWN_RATE, 5);
         this.GameValues.set(GameValue.SECONDS_PER_WIN, 1);

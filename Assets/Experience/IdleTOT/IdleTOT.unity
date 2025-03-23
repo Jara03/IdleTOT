@@ -1645,7 +1645,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 54t
+  m_text: 0t
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2686,7 +2686,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961739749}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3826835, y: -0.0000000018491678, z: 7.659506e-10, w: 0.9238795}
+  m_LocalRotation: {x: 0.3826835, y: -0.0000000018491677, z: 7.6595047e-10, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 11.375, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3199,7 +3199,7 @@ PrefabInstance:
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9238795
+      value: 0.92387956
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
@@ -3209,12 +3209,12 @@ PrefabInstance:
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000018491678
+      value: -0.0000000018491677
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 7.659506e-10
+      value: 7.6595047e-10
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
@@ -3809,8 +3809,61 @@ MonoBehaviour:
     PropType: 4
     PropKey: EnterBiomeButton
     BasePath: EnterBiomeButton
+  - IntValue: 0
+    LongValue: 0
+    DoubleValue: 0
+    FloatValue: 0
+    BoolValue: 0
+    StringValue: 
+    ColorValue: {r: 0, g: 0, b: 0, a: 0}
+    UnityObjectReference: {fileID: 0}
+    LayerMaskValue:
+      serializedVersion: 2
+      m_Bits: 0
+    Vector2Value: {x: 0, y: 0}
+    Vector3Value: {x: 0, y: 0, z: 0}
+    Vector4Value: {x: 0, y: 0, z: 0, w: 0}
+    RectValue:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    AnimationCurveValue:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    BoundsValue:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+    QuaternionValue: {x: 0, y: 0, z: 0, w: 0}
+    Vector2IntValue: {x: 0, y: 0}
+    Vector3IntValue: {x: 0, y: 0, z: 0}
+    RectIntValue:
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    BoundsIntValue:
+      m_Position: {x: 0, y: 0, z: 0}
+      m_Size: {x: 0, y: 0, z: 0}
+    GeniesBehaviourReference: {fileID: 0}
+    GeniesSOReference: {fileID: 0}
+    SerializedCsObjectValue: 
+    CsObjectReferences: []
+    TypeName: TMPro.TMP_Text
+    ArrayLength: 0
+    IsArray: 0
+    ArrayDimension: -1
+    IsExpanded: 0
+    IsPrefabOverride: 0
+    PropType: 4
+    PropKey: LocalMoney
+    BasePath: LocalMoney
   _script: {fileID: 4458252877524076426, guid: 9e7168f607981de4bb525b9c96ca3376, type: 3}
-  _scriptAssetHash: 616254544fee64c95c561093558d6244
+  _scriptAssetHash: d8887c629d99eda8095ea99f20b58821
   UiEventForwarders: []
 --- !u!1 &1336829342
 GameObject:
@@ -4299,7 +4352,7 @@ MonoBehaviour:
     PropKey: MenuManager
     BasePath: MenuManager
   _script: {fileID: 4458252877524076426, guid: 1a30ab28d1b63444db83fc3b5554aad3, type: 3}
-  _scriptAssetHash: 9e7adb42dd92d837d6bef8bdda4b996d
+  _scriptAssetHash: 261481862c328a54d63d9f68c257e5c2
   UiEventForwarders: []
 --- !u!224 &1360038059
 RectTransform:
@@ -5086,8 +5139,61 @@ MonoBehaviour:
     PropType: 1
     PropKey: GameManager
     BasePath: GameManager
+  - IntValue: 0
+    LongValue: 0
+    DoubleValue: 0
+    FloatValue: 0
+    BoolValue: 0
+    StringValue: 
+    ColorValue: {r: 0, g: 0, b: 0, a: 0}
+    UnityObjectReference: {fileID: 576292169}
+    LayerMaskValue:
+      serializedVersion: 2
+      m_Bits: 0
+    Vector2Value: {x: 0, y: 0}
+    Vector3Value: {x: 0, y: 0, z: 0}
+    Vector4Value: {x: 0, y: 0, z: 0, w: 0}
+    RectValue:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    AnimationCurveValue:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    BoundsValue:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+    QuaternionValue: {x: 0, y: 0, z: 0, w: 0}
+    Vector2IntValue: {x: 0, y: 0}
+    Vector3IntValue: {x: 0, y: 0, z: 0}
+    RectIntValue:
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    BoundsIntValue:
+      m_Position: {x: 0, y: 0, z: 0}
+      m_Size: {x: 0, y: 0, z: 0}
+    GeniesBehaviourReference: {fileID: 0}
+    GeniesSOReference: {fileID: 0}
+    SerializedCsObjectValue: 
+    CsObjectReferences: []
+    TypeName: TMPro.TMP_Text
+    ArrayLength: 0
+    IsArray: 0
+    ArrayDimension: -1
+    IsExpanded: 0
+    IsPrefabOverride: 0
+    PropType: 4
+    PropKey: PlaineScoreText
+    BasePath: PlaineScoreText
   _script: {fileID: 4458252877524076426, guid: 90a202b9934ec6141b1201d50972548a, type: 3}
-  _scriptAssetHash: 66074a7ffa1f424d2751255d503c8b65
+  _scriptAssetHash: 3775607b48f8c794d7a5375c0c4607ae
   UiEventForwarders: []
 --- !u!1 &1375105527
 GameObject:
@@ -5344,74 +5450,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1378123466}
   m_CullTransparentMesh: 1
---- !u!1001 &1385948030
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5212005070397009899, guid: b4ab7b48976234f73921e764e4ce1869,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 27.998535
-      objectReference: {fileID: 0}
-    - target: {fileID: 5212005070397009899, guid: b4ab7b48976234f73921e764e4ce1869,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.0349998
-      objectReference: {fileID: 0}
-    - target: {fileID: 5212005070397009899, guid: b4ab7b48976234f73921e764e4ce1869,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -29.989178
-      objectReference: {fileID: 0}
-    - target: {fileID: 5212005070397009899, guid: b4ab7b48976234f73921e764e4ce1869,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5212005070397009899, guid: b4ab7b48976234f73921e764e4ce1869,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5212005070397009899, guid: b4ab7b48976234f73921e764e4ce1869,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5212005070397009899, guid: b4ab7b48976234f73921e764e4ce1869,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5212005070397009899, guid: b4ab7b48976234f73921e764e4ce1869,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5212005070397009899, guid: b4ab7b48976234f73921e764e4ce1869,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5212005070397009899, guid: b4ab7b48976234f73921e764e4ce1869,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6948436506391223826, guid: b4ab7b48976234f73921e764e4ce1869,
-        type: 3}
-      propertyPath: m_Name
-      value: SimpleObstacle
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b4ab7b48976234f73921e764e4ce1869, type: 3}
 --- !u!1001 &1447020928
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7212,8 +7250,61 @@ MonoBehaviour:
     PropType: 4
     PropKey: EnterBiomeButton
     BasePath: EnterBiomeButton
+  - IntValue: 0
+    LongValue: 0
+    DoubleValue: 0
+    FloatValue: 0
+    BoolValue: 0
+    StringValue: 
+    ColorValue: {r: 0, g: 0, b: 0, a: 0}
+    UnityObjectReference: {fileID: 0}
+    LayerMaskValue:
+      serializedVersion: 2
+      m_Bits: 0
+    Vector2Value: {x: 0, y: 0}
+    Vector3Value: {x: 0, y: 0, z: 0}
+    Vector4Value: {x: 0, y: 0, z: 0, w: 0}
+    RectValue:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    AnimationCurveValue:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    BoundsValue:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+    QuaternionValue: {x: 0, y: 0, z: 0, w: 0}
+    Vector2IntValue: {x: 0, y: 0}
+    Vector3IntValue: {x: 0, y: 0, z: 0}
+    RectIntValue:
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    BoundsIntValue:
+      m_Position: {x: 0, y: 0, z: 0}
+      m_Size: {x: 0, y: 0, z: 0}
+    GeniesBehaviourReference: {fileID: 0}
+    GeniesSOReference: {fileID: 0}
+    SerializedCsObjectValue: 
+    CsObjectReferences: []
+    TypeName: TMPro.TMP_Text
+    ArrayLength: 0
+    IsArray: 0
+    ArrayDimension: -1
+    IsExpanded: 0
+    IsPrefabOverride: 0
+    PropType: 4
+    PropKey: LocalMoney
+    BasePath: LocalMoney
   _script: {fileID: 4458252877524076426, guid: 9e7168f607981de4bb525b9c96ca3376, type: 3}
-  _scriptAssetHash: 616254544fee64c95c561093558d6244
+  _scriptAssetHash: d8887c629d99eda8095ea99f20b58821
   UiEventForwarders: []
 --- !u!1 &1545408998
 GameObject:
@@ -7463,7 +7554,7 @@ MonoBehaviour:
     PropKey: DesertItem
     BasePath: DesertItem
   _script: {fileID: 4458252877524076426, guid: 82e35991918c9e84fa36a895238b9ddb, type: 3}
-  _scriptAssetHash: ce49d2393497aabab07696979436a24f
+  _scriptAssetHash: a63b32b0a3fc98de178b9c4cbe88e7d7
   UiEventForwarders: []
 --- !u!4 &1545409000
 Transform:
@@ -9100,7 +9191,7 @@ MonoBehaviour:
     PropKey: Biomes
     BasePath: Biomes
   _script: {fileID: 4458252877524076426, guid: 3cdcb4855b61ed3498170f48f734e8ef, type: 3}
-  _scriptAssetHash: 088e41c41cf4e6339a6444435c9200ac
+  _scriptAssetHash: e8b280089b51d8e964b57be3d8d1fddd
   UiEventForwarders: []
 --- !u!4 &2134616280
 Transform:
@@ -9183,8 +9274,61 @@ MonoBehaviour:
     PropType: 4
     PropKey: Ground
     BasePath: Ground
+  - IntValue: 0
+    LongValue: 0
+    DoubleValue: 0
+    FloatValue: 0
+    BoolValue: 0
+    StringValue: 
+    ColorValue: {r: 0, g: 0, b: 0, a: 0}
+    UnityObjectReference: {fileID: 0}
+    LayerMaskValue:
+      serializedVersion: 2
+      m_Bits: 0
+    Vector2Value: {x: 0, y: 0}
+    Vector3Value: {x: 0, y: 0, z: 0}
+    Vector4Value: {x: 0, y: 0, z: 0, w: 0}
+    RectValue:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    AnimationCurveValue:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    BoundsValue:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+    QuaternionValue: {x: 0, y: 0, z: 0, w: 0}
+    Vector2IntValue: {x: 0, y: 0}
+    Vector3IntValue: {x: 0, y: 0, z: 0}
+    RectIntValue:
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    BoundsIntValue:
+      m_Position: {x: 0, y: 0, z: 0}
+      m_Size: {x: 0, y: 0, z: 0}
+    GeniesBehaviourReference: {fileID: 1545408999}
+    GeniesSOReference: {fileID: 0}
+    SerializedCsObjectValue: 
+    CsObjectReferences: []
+    TypeName: '@assets/Experience/IdleTOT/Scripts/HazardItemSpawner.HazardItemSpawner'
+    ArrayLength: 0
+    IsArray: 0
+    ArrayDimension: -1
+    IsExpanded: 0
+    IsPrefabOverride: 0
+    PropType: 1
+    PropKey: itemSpawner
+    BasePath: itemSpawner
   _script: {fileID: 4458252877524076426, guid: 12539ea55e4b1e34ab9d234a160c58ec, type: 3}
-  _scriptAssetHash: 10741ccd77f9058a15ddfe46d3898d01
+  _scriptAssetHash: 593386648db94f8a1c963c27618dc0b7
   UiEventForwarders: []
 --- !u!1001 &1023189001202376016
 PrefabInstance:
@@ -9523,7 +9667,7 @@ MonoBehaviour:
     PropKey: Yclip
     BasePath: Yclip
   _script: {fileID: 4458252877524076426, guid: be78e8a8c0453d149b7b3688233ede3a, type: 3}
-  _scriptAssetHash: 7abb243e0bc81efd08b3bda83abe1fa7
+  _scriptAssetHash: eabbe10711ef4479f80232140cc075d8
   UiEventForwarders: []
 --- !u!4 &3285411674210837050 stripped
 Transform:
@@ -9702,5 +9846,4 @@ SceneRoots:
   - {fileID: 1545409000}
   - {fileID: 2134616280}
   - {fileID: 1360038059}
-  - {fileID: 1385948030}
   - {fileID: 1195258443}

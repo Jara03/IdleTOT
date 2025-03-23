@@ -15,12 +15,13 @@ import {
     Rigidbody,
     ForceMode,
     Collision,
-    GameObject, ControllerColliderHit, AudioSource, AudioClip
+    GameObject, ControllerColliderHit, AudioSource, AudioClip, Renderer
 } from 'UnityEngine';
 
 import GameManager, { GameState } from './GameManager';
 import CanvasManager from "@assets/Experience/IdleTOT/Scripts/CanvasManager";
 import {AudioPlayableAsset} from "UnityEngine.Timeline";
+import HazardItemSpawner from "@assets/Experience/IdleTOT/Scripts/HazardItemSpawner";
 
 export default class PlayerController extends MonoBehaviour {
 
@@ -32,6 +33,9 @@ export default class PlayerController extends MonoBehaviour {
     public Yeah : AudioSource;
     public Yclip : AudioClip ;
 
+    public itemSpawner : HazardItemSpawner;
+
+
     async Start() {
         //Get GameManager singleton and add a listener to OnGameStateChange event
         this.gameManager = GameManager.Instance;
@@ -40,10 +44,6 @@ export default class PlayerController extends MonoBehaviour {
 
     }
 
-    Update() {
-        //If game is playing, check for touch swipe and move player accordingly
-
-    }
 
     /** Manages the player logic when the game state changes. @param newState */
     private CheckGameState(newState: GameState) {
@@ -64,9 +64,12 @@ export default class PlayerController extends MonoBehaviour {
         //End game if colliding with enemy
         if (coll.gameObject.tag == "Enemy") {
 
+            //remove the game object from itemList
             GameObject.Destroy(coll.gameObject);
+
+
             this.canvasManager.UpdateScore();
-            this.Yeah.PlayOneShot(this.Yclip)
+           // this.Yeah.PlayOneShot(this.Yclip)
         }
     }
 

@@ -1,15 +1,17 @@
 import {
+    Color,
     Coroutine,
     GameObject,
     Mathf,
     MonoBehaviour,
     Object,
-    Random,
+    Random, Renderer,
     Transform,
     Vector3,
     WaitForSeconds
 } from "UnityEngine";
 import GameManager, {GameState, GameValue, Biomes} from "./GameManager";
+import {ArrayList} from "System.Collections";
 
 export default class HazardItemSpawner extends MonoBehaviour {
 
@@ -22,6 +24,7 @@ export default class HazardItemSpawner extends MonoBehaviour {
 
     private gameManager: GameManager;
 
+    public ItemList: GameObject[] = [];
 
     /** This coroutine will spawn enemies over time. */
     private coroutine: Coroutine;
@@ -42,7 +45,6 @@ export default class HazardItemSpawner extends MonoBehaviour {
                 this.OnGamePlay();
                 break;
             case GameState.GAME_OVER:
-                this.OnGameOver();
                 break;
         }
     }
@@ -58,26 +60,26 @@ export default class HazardItemSpawner extends MonoBehaviour {
     /** Spawns the initial pool of GameObjects and deactivates them. */
     private CreateItem() {
         let temp = null;
-            switch (this.gameManager.GameValues.get(GameValue.CURRENT_BIOME)) {
-                case (Biomes.TOT):
-                    temp = Object.Instantiate(this.TotItem, this.transform) as GameObject;
-                break;
-                case (Biomes.PLAINES):
-                    temp = Object.Instantiate(this.PlainesItem, this.transform) as GameObject;
-                    break;
-                case (Biomes.MINE):
-                    temp = Object.Instantiate(this.MineItem, this.transform) as GameObject;
-                    break;
-                case (Biomes.DESERT):
-                    temp = Object.Instantiate(this.DesertItem, this.transform) as GameObject;
-                    break;
-                    default:
-                        temp = Object.Instantiate(this.TotItem, this.transform) as GameObject;
-                        break;
-            }
+        temp = Object.Instantiate(this.getCurrentBiomeItem(), this.transform) as GameObject;
 
-            temp.SetActive(false);
+        temp.SetActive(false);
+            this.ItemList.push(temp);
             return temp;
+    }
+
+    private getCurrentBiomeItem() {
+        switch (this.gameManager.GameValues.get(GameValue.CURRENT_BIOME)) {
+            case (Biomes.TOT):
+                return this.TotItem;
+            case (Biomes.PLAINES):
+                return this.PlainesItem;
+            case (Biomes.MINE):
+                return this.MineItem;
+            case (Biomes.DESERT):
+                return this.DesertItem;
+            default:
+                return this.TotItem;
+        }
     }
 
     /** Coroutine that spawns a new enemy from the pool. */
@@ -92,6 +94,21 @@ export default class HazardItemSpawner extends MonoBehaviour {
                 item.SetActive(true);
             }
             yield new WaitForSeconds(this.gameManager.GameValues.get(GameValue.SPAWN_RATE));
+        }
+    }
+
+    public clearOtherBiomesAssets() {
+        //check list of gameObjects and set them to inactive if they are not the current prefab used
+        for (let i = 0; i < this.ItemList.length; i++) {
+            //this.ItemList[i].SetActive(true);
+            if(this.ItemList[i].gameObject != undefined && this.ItemList[i].gameObject != null) {
+
+                if(this.ItemList[i].GetComponent<Renderer>().sharedMaterial != this.getCurrentBiomeItem().GetComponent<Renderer>().sharedMaterial){
+                    this.ItemList[i].SetActive(false);
+                }else{
+                    this.ItemList[i].SetActive(true);
+                }
+            }
         }
     }
 

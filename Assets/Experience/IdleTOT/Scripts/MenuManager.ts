@@ -1,7 +1,7 @@
 import {GameObject, MonoBehaviour} from "UnityEngine";
 import {Button} from "UnityEngine.UI";
 import {TMP_Text} from "TMPro";
-import GameManager, {GameValue} from "./GameManager";
+import GameManager, {Biomes, GameValue} from "./GameManager";
 
 export default class MenuManager extends MonoBehaviour {
 
@@ -14,12 +14,12 @@ export default class MenuManager extends MonoBehaviour {
 
     //player total score text
     @SerializeField private totalScoreText: TMP_Text;
+    @SerializeField private PlaineScoreText: TMP_Text;
+
 
     public GameManager: GameManager;
 
 
-    //Called when script instance is loaded
-    private Awake() : void {}
 
     //Start is called on the frame when a script is enabled just
     //before any of the Update methods are called the first time.
@@ -47,19 +47,35 @@ export default class MenuManager extends MonoBehaviour {
     }
 
     public UpdateTotalScore(score: int) : void {
-        this.GameManager.GameValues.set(GameValue.SCORE, score);
-        this.totalScoreText.text = score.toString() + " s";
+
+        if(this.GameManager.GameValues.get(GameValue.CURRENT_BIOME) == Biomes.TOT) {
+            this.GameManager.GameValues.set(GameValue.SCORE, score);
+            this.totalScoreText.text = score.toString() + " s";
+        }else{
+            this.GameManager.GameValues.set(GameValue.PLAINES_SCORE, score);
+            this.PlaineScoreText.text = score.toString() + " s";
+        }
+
     }
 
     public BuyItem(cost: int) : void {
         //deduct cost from total score
         //update total score text
-        let currentScore = this.GameManager.GameValues.get(GameValue.SCORE);
-        console.log("Buy Button Clicked : total Score" + currentScore + " cost " + cost);
-        if((currentScore-cost) >= 0 ) {
+        if(this.GameManager.GameValues.get(GameValue.CURRENT_BIOME) == Biomes.TOT){
 
+            let currentScore = this.GameManager.GameValues.get(GameValue.SCORE);
+            console.log("Buy Button Clicked : total Score" + currentScore + " cost " + cost);
+            if((currentScore-cost) >= 0 ) {
+                this.UpdateTotalScore(currentScore-cost);
+            }
 
-            this.UpdateTotalScore(currentScore-cost);
+        }else{
+            let currentScore = this.GameManager.GameValues.get(GameValue.PLAINES_SCORE);
+            console.log("Buy Button Clicked : total Score" + currentScore + " cost " + cost);
+            if((currentScore-cost) >= 0 ) {
+                this.UpdateTotalScore(currentScore-cost);
+            }
+
         }
 
     }

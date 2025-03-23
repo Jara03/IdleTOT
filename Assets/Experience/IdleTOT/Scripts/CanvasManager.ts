@@ -2,8 +2,9 @@ import {Coroutine, GameObject, MonoBehaviour} from "UnityEngine";
 import {Button} from "UnityEngine.UI";
 import {TMP_Text} from "TMPro";
 import {CloudSaveStorage} from "Genies.Experience.CloudSave";
-import GameManager, {GameState, GameValue} from "@assets/Experience/IdleTOT/Scripts/GameManager";
+import GameManager, {Biomes, GameState, GameValue} from "@assets/Experience/IdleTOT/Scripts/GameManager";
 import MenuManager from "@assets/Experience/IdleTOT/Scripts/MenuManager";
+import HazardItemSpawner from "@assets/Experience/IdleTOT/Scripts/HazardItemSpawner";
 
 export default class CanvasManager extends MonoBehaviour {
 
@@ -70,12 +71,22 @@ export default class CanvasManager extends MonoBehaviour {
 
 
     public UpdateScore(): void {
-        this.gameManager.UpdateGameValue(GameValue.SCORE, +this.gameManager.GameValues.get(GameValue.SECONDS_PER_WIN));
-        this.scoreText.text = "Score: " + this.gameManager.GameValues.get(GameValue.SCORE);
-        this.MenuManager.UpdateTotalScore(this.gameManager.GameValues.get(GameValue.SCORE));
-        //TODO supprimer cette méthode et la remplacer par onTriggerEnter
-        // ou la transformer en setter
+
+        if(this.gameManager.GameValues.get(GameValue.CURRENT_BIOME) == Biomes.TOT){
+            this.gameManager.UpdateGameValue(GameValue.SCORE, +this.gameManager.GameValues.get(GameValue.SECONDS_PER_WIN));
+
+            this.scoreText.text = "Score: " + this.gameManager.GameValues.get(GameValue.SCORE);
+            this.MenuManager.UpdateTotalScore(this.gameManager.GameValues.get(GameValue.SCORE));
+
+        }else{
+            this.gameManager.UpdateGameValue(GameValue.PLAINES_SCORE, +this.gameManager.GameValues.get(GameValue.SECONDS_PER_WIN));
+
+            this.scoreText.text = "Score: " + this.gameManager.GameValues.get(GameValue.PLAINES_SCORE);
+            this.MenuManager.UpdateTotalScore(this.gameManager.GameValues.get(GameValue.PLAINES_SCORE));
+        }
+
     }
+
 
     public OpenMenu(): void {
 
@@ -86,8 +97,11 @@ export default class CanvasManager extends MonoBehaviour {
     }
 
     public CloseMenu(): void {
-
-        this.scoreText.text = "Score: " + this.gameManager.GameValues.get(GameValue.SCORE);
+        if(this.gameManager.GameValues.get(GameValue.CURRENT_BIOME) == Biomes.TOT){
+            this.scoreText.text = "Score: " + this.gameManager.GameValues.get(GameValue.SCORE);
+        }else{
+            this.scoreText.text = "Score: " + this.gameManager.GameValues.get(GameValue.PLAINES_SCORE);
+        }
         this.menuPanel.SetActive(false);
         this.menuButton.gameObject.SetActive(true);
         this.closeMenu.gameObject.SetActive(false);

@@ -4,6 +4,7 @@ import {Button} from "UnityEngine.UI";
 import MenuManager from "@assets/Experience/IdleTOT/Scripts/MenuManager";
 import GameManager, {Biomes, GameValue} from "@assets/Experience/IdleTOT/Scripts/GameManager";
 import BiomeManager from "@assets/Experience/IdleTOT/Scripts/BiomeManager";
+import {TMP_Text} from "TMPro";
 
 
 
@@ -12,6 +13,7 @@ export default class ImprovementManager extends MonoBehaviour {
     @Header("Button Settings")
     @SerializeField public BuyButtons: Button[];
     @SerializeField public BuyMaxButtons: Button[];
+    @SerializeField public LocalMoney: TMP_Text;
 
     @Header("Canvas Settings")
      public MenuManager: MenuManager;
@@ -44,21 +46,17 @@ export default class ImprovementManager extends MonoBehaviour {
         }
 
         this.EnterBiomeButton.onClick.AddListener(() => {
-            this.GoToZone(this.BiomeImproved);
+            this.BuyItem(30);
+            this.GoToZone(20);
             })
-    }
-    private Awake() : void {
-
-
     }
 
     private BuyItem(cost: int) : void {
         //deduct cost from total score
         //update total score text
-        //
-
         this.MenuManager.BuyItem(cost);
     }
+
 
     private ApplyImprovement(index: int) : void {
         //apply improvement

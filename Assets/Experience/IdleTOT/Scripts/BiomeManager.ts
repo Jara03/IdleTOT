@@ -1,10 +1,11 @@
-
-import {Color, GameObject, MonoBehaviour, Renderer} from "UnityEngine";
+import {Color, GameObject, MonoBehaviour, Renderer, WaitForSeconds} from "UnityEngine";
 import GameManager, {Biomes, GameValue} from "@assets/Experience/IdleTOT/Scripts/GameManager";
+import HazardItemSpawner from "@assets/Experience/IdleTOT/Scripts/HazardItemSpawner";
+
 export default class BiomeManager extends MonoBehaviour {
 
-    private timeInCurrentBiome: number;
     private gameManager: GameManager;
+    public itemSpawner: HazardItemSpawner;
 
     //the ground prefab for the TOT biome
     @SerializeField public Ground: GameObject;
@@ -13,9 +14,13 @@ export default class BiomeManager extends MonoBehaviour {
     public  switchBiome(BiomeToSwitch :Biomes, duration: int) {
 
     console.log("Biome", BiomeToSwitch);
-    this.gameManager.UpdateGameValue(GameValue.CURRENT_BIOME, BiomeToSwitch);
-    this.timeInCurrentBiome = duration
-        this.updateEnvironment();
+    this.gameManager.GameValues.set(GameValue.CURRENT_BIOME, BiomeToSwitch);
+
+    this.updateEnvironment();
+
+    if(this.gameManager.GameValues.get(GameValue.CURRENT_BIOME) != Biomes.TOT && duration > 0) {
+        this.switchBiomeAfterDuration(duration);
+    }
 
     }
 
@@ -25,11 +30,10 @@ export default class BiomeManager extends MonoBehaviour {
         this.gameManager = GameManager.Instance;
     }
 
-    //Update is called every frame, if the MonoBehaviour is enabled.
-    private Update() : void {}
 
     private updateEnvironment() {
-        console.log(this.gameManager.GameValues.get(GameValue.CURRENT_BIOME));
+        //this.itemSpawner.clearOtherBiomesAssets();
+        console.log("I'm updating");
         switch(this.gameManager.GameValues.get(GameValue.CURRENT_BIOME)) {
             case Biomes.TOT:
                 //change material of ground to TOT material
@@ -47,6 +51,19 @@ export default class BiomeManager extends MonoBehaviour {
                 //update environment to desert
                 this.Ground.GetComponent<Renderer>().material.color = Color.white;
                 break;
+
         }
+    }
+
+
+
+    //create a coroutine that will switch the biome after a certain duration
+    private switchBiomeAfterDuration(duration: int) {
+        this.StartCoroutine(this.switchBiomeAfterDurationCoroutine(duration));
+    }
+
+    private *switchBiomeAfterDurationCoroutine(duration: int) {
+        yield new WaitForSeconds(duration);
+        this.switchBiome(Biomes.TOT, -1);
     }
 }
